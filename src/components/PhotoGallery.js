@@ -1,6 +1,6 @@
 // src/components/PhotoGallery.js - Photo Gallery Component with Actual Photos
 import React, { useState, useEffect } from 'react';
-import { FiX, FiChevronLeft, FiChevronRight, FiGrid, FiMusic, FiCamera, FiAward } from 'react-icons/fi';
+import { FiX, FiChevronLeft, FiChevronRight, FiGrid, FiMusic, FiCamera } from 'react-icons/fi';
 
 const PhotoGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');

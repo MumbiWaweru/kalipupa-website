@@ -1,6 +1,6 @@
 // src/components/Layout/Navbar.js - NAIROBI HIPHOP ARTIST NAVBAR
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiInstagram, FiYoutube, FiTwitter, FiMail } from 'react-icons/fi';
+import { FiMenu, FiX, FiInstagram, FiYoutube, FiMail } from 'react-icons/fi';
 import { FaSpotify, FaSoundcloud, FaTiktok, FaFacebookF } from 'react-icons/fa';
 
 const Navbar = () => {

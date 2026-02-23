@@ -1,7 +1,7 @@
 // src/components/Layout/Footer.js - NAIROBI HIPHOP ARTIST FOOTER
 import React from 'react';
-import { FiHeart, FiInstagram, FiYoutube, FiTwitter, FiMail, FiMapPin, FiPhone, FiMail as FiEnvelope, FiClock, FiAward } from 'react-icons/fi';
-import { FaSpotify, FaApple, FaSoundcloud, FaTiktok, FaFacebookF } from 'react-icons/fa';
+import { FiHeart, FiInstagram, FiYoutube, FiMail as FiEnvelope, FiMapPin, FiPhone, FiClock, FiAward } from 'react-icons/fi';
+import { FaSpotify, FaSoundcloud, FaTiktok, FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

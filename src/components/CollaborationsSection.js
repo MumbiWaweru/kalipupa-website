@@ -1,6 +1,6 @@
 // CollaborationsSection - NAIROBI HIPHOP ARTIST COLLABORATIONS
 import React, { useState } from 'react';
-import { FiPlay, FiExternalLink, FiUsers, FiMusic, FiAward, FiCalendar, FiMapPin } from 'react-icons/fi';
+import { FiExternalLink, FiUsers, FiMusic, FiAward, FiCalendar, FiMapPin } from 'react-icons/fi';
 
 const CollaborationsSection = () => {
   const [activeTab, setActiveTab] = useState('collaborations');

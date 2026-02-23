@@ -1,6 +1,6 @@
 // MusicSection - NAIROBI HIPHOP ARTIST MUSIC SECTION
 import React, { useState } from 'react';
-import { FiPlay, FiExternalLink, FiMusic, FiHeadphones, FiClock, FiHeart, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiPlay, FiExternalLink, FiClock, FiHeart, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const MusicSection = () => {
   const [activeProject, setActiveProject] = useState(0);

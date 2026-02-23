@@ -399,19 +399,19 @@ const HeroSection = () => {
         <div className="hero-container">
           {/* Content Side */}
           <div className="hero-content">
-            <div className="hero-tag">Nairobi's HipHop Voice</div>
+            <div className="hero-tag">Nairobi HipHop</div>
 
             <h1 className="hero-title">
               I'm Kalipupa
             </h1>
 
             <p className="hero-subtitle">
-              Authentic Stories Through Music
+              Real Stories, Real Music
             </p>
 
             <p className="hero-description">
-              Blending traditional Nairobi sounds with contemporary HipHop to create
-              music that resonates with the soul of the city and beyond.
+              Nairobi sounds meet contemporary HipHop.
+              Music from the heart of the city.
             </p>
 
             <div className="hero-cta">

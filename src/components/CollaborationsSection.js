@@ -1,4 +1,4 @@
-// Enhanced CollaborationsSection with improved design and functionality
+// CollaborationsSection - NAIROBI HIPHOP ARTIST COLLABORATIONS
 import React, { useState } from 'react';
 import { FiPlay, FiExternalLink, FiUsers, FiMusic, FiAward, FiCalendar, FiMapPin } from 'react-icons/fi';
 
@@ -13,7 +13,7 @@ const CollaborationsSection = () => {
       artists: ["Kalipupa", "BTiSA"],
       year: "2020",
       type: "Single",
-      description: "A groundbreaking collaboration that brought together two of Nairobi's finest talents. The track features intricate wordplay and innovative production.",
+      description: "Collaboration bringing together Nairobi talents. The track features wordplay and innovative production.",
       tracks: [
         { title: "FinalVibez", plays: 54, duration: "3:25" },
         { title: "GOT Freestyle", plays: 11, duration: "2:45" },
@@ -22,7 +22,7 @@ const CollaborationsSection = () => {
       coverArt: "https://images.unsplash.com/photo-1511671782779-c97d573caf7e?q=80&w=1932&auto=format&fit=crop",
       genre: "Hip-Hop/Rap",
       location: "Nairobi, Kenya",
-      achievements: ["Top 10 on local charts", "100K+ streams in first month"]
+      achievements: ["Top 10 on local charts", "100K+ streams"]
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const CollaborationsSection = () => {
       artists: ["Kalipupa", "Various Artists"],
       year: "2021",
       type: "Compilation",
-      description: "A collaborative effort featuring multiple artists from the Nairobi scene, showcasing the diversity of urban music in Kenya.",
+      description: "Multiple artists from the Nairobi scene, showcasing urban music in Kenya.",
       tracks: [
         { title: "City Unity", plays: 42, duration: "4:10" },
         { title: "Street Symphony", plays: 38, duration: "3:55" },
@@ -39,7 +39,7 @@ const CollaborationsSection = () => {
       coverArt: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1935&auto=format&fit=crop",
       genre: "Hip-Hop/Pop",
       location: "Nairobi, Kenya",
-      achievements: ["Featured on national radio", "Critical acclaim"]
+      achievements: ["Featured on national radio"]
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ const CollaborationsSection = () => {
       artists: ["Kalipupa", "International Artists"],
       year: "2022",
       type: "Mixtape",
-      description: "An ambitious project bringing together artists from different countries to create a fusion of sounds and cultures.",
+      description: "Artists from different countries creating a fusion of sounds and cultures.",
       tracks: [
         { title: "Global Rhythm", plays: 35, duration: "3:40" },
         { title: "Cultural Bridge", plays: 29, duration: "4:25" },
@@ -56,15 +56,15 @@ const CollaborationsSection = () => {
       coverArt: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop",
       genre: "World Music/Hip-Hop",
       location: "Pan-African",
-      achievements: ["International recognition", "Cultural exchange program"]
+      achievements: ["International recognition"]
     }
   ];
 
   const featuredArtists = [
-    { name: "BTiSA", role: "Rapper", country: "Kenya", tracks: 3, image: "https://images.unsplash.com/photo-1543429776-2782fc586c3f?q=80&w=1974&auto=format&fit=crop" },
-    { name: "Urban Voices Collective", role: "Group", country: "Kenya", tracks: 5, image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop" },
-    { name: "International Artists", role: "Various", country: "Multiple", tracks: 7, image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=2070&auto=format&fit=crop" },
-    { name: "Nairobi Beats", role: "Producer", country: "Kenya", tracks: 12, image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop" }
+    { name: "BTiSA", role: "Rapper", country: "Kenya", tracks: 3 },
+    { name: "Urban Voices Collective", role: "Group", country: "Kenya", tracks: 5 },
+    { name: "International Artists", role: "Various", country: "Multiple", tracks: 7 },
+    { name: "Nairobi Beats", role: "Producer", country: "Kenya", tracks: 12 }
   ];
 
   const toggleExpand = (id) => {
@@ -103,7 +103,7 @@ const CollaborationsSection = () => {
           transform: translateX(-50%);
           width: 100px;
           height: 5px;
-          background: linear-gradient(90deg, #FFD700, #FFEC8B, #D4AF37);
+          background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
           border-radius: 3px;
         }
 
@@ -133,14 +133,14 @@ const CollaborationsSection = () => {
         }
 
         .tab.active {
-          background: rgba(255, 215, 0, 0.1);
-          border-color: rgba(255, 215, 0, 0.3);
-          color: #FFD700;
+          background: rgba(124, 58, 237, 0.1);
+          border-color: rgba(124, 58, 237, 0.3);
+          color: #A855F7;
         }
 
         .tab:hover:not(.active) {
-          background: rgba(255, 215, 0, 0.05);
-          border-color: rgba(255, 215, 0, 0.15);
+          background: rgba(124, 58, 237, 0.05);
+          border-color: rgba(124, 58, 237, 0.15);
         }
 
         .collaborations-grid {
@@ -154,7 +154,7 @@ const CollaborationsSection = () => {
           background: rgba(30, 30, 30, 0.9);
           border-radius: 20px;
           padding: 2rem;
-          border: 1px solid rgba(255, 215, 0, 0.1);
+          border: 1px solid rgba(124, 58, 237, 0.1);
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           position: relative;
@@ -162,7 +162,7 @@ const CollaborationsSection = () => {
 
         .collab-card:hover {
           transform: translateY(-12px) scale(1.02);
-          border-color: rgba(255, 215, 0, 0.3);
+          border-color: rgba(124, 58, 237, 0.3);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
@@ -185,8 +185,8 @@ const CollaborationsSection = () => {
         }
 
         .artist-tag {
-          background: rgba(255, 215, 0, 0.1);
-          color: #FFD700;
+          background: rgba(124, 58, 237, 0.1);
+          color: #A855F7;
           padding: 0.3rem 0.8rem;
           border-radius: 20px;
           font-size: 0.85rem;
@@ -209,7 +209,7 @@ const CollaborationsSection = () => {
         }
 
         .meta-icon {
-          color: #FFD700;
+          color: #A855F7;
         }
 
         .collab-description {
@@ -223,9 +223,9 @@ const CollaborationsSection = () => {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          background: rgba(255, 215, 0, 0.1);
-          border: 1px solid rgba(255, 215, 0, 0.2);
-          color: #FFD700;
+          background: rgba(124, 58, 237, 0.1);
+          border: 1px solid rgba(124, 58, 237, 0.2);
+          color: #A855F7;
           padding: 0.6rem 1.2rem;
           border-radius: 8px;
           cursor: pointer;
@@ -235,13 +235,13 @@ const CollaborationsSection = () => {
         }
 
         .expand-btn:hover {
-          background: rgba(255, 215, 0, 0.2);
+          background: rgba(124, 58, 237, 0.2);
         }
 
         .expanded-content {
           background: rgba(40, 40, 40, 0.7);
           padding: 1.5rem;
-          border-top: 1px solid rgba(255, 215, 0, 0.1);
+          border-top: 1px solid rgba(124, 58, 237, 0.1);
           max-height: ${expandedCollab ? '500px' : '0'};
           overflow: hidden;
           transition: max-height 0.5s ease, padding 0.5s ease;
@@ -284,13 +284,13 @@ const CollaborationsSection = () => {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          color: #FFD700;
+          color: #A855F7;
           margin-bottom: 0.5rem;
           font-size: 0.9rem;
         }
 
         .achievement-icon {
-          color: #FFD700;
+          color: #A855F7;
         }
 
         .featured-artists {
@@ -308,20 +308,20 @@ const CollaborationsSection = () => {
           border-radius: 16px;
           padding: 2rem;
           text-align: center;
-          border: 1px solid rgba(255, 215, 0, 0.1);
+          border: 1px solid rgba(124, 58, 237, 0.1);
           transition: all 0.3s ease;
         }
 
         .artist-card:hover {
           transform: translateY(-8px);
-          border-color: rgba(255, 215, 0, 0.3);
+          border-color: rgba(124, 58, 237, 0.3);
           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .artist-icon {
           font-size: 3rem;
           margin: 0 auto 1.2rem;
-          color: #FFD700;
+          color: #A855F7;
           display: block;
         }
 
@@ -333,7 +333,7 @@ const CollaborationsSection = () => {
         }
 
         .artist-role {
-          color: #FFD700;
+          color: #A855F7;
           font-size: 0.9rem;
           margin-bottom: 0.3rem;
         }
@@ -360,8 +360,8 @@ const CollaborationsSection = () => {
         .btn {
           padding: 1rem 2rem;
           background: transparent;
-          border: 2px solid #FFD700;
-          color: #FFD700;
+          border: 2px solid #7C3AED;
+          color: #A855F7;
           font-size: 1rem;
           font-weight: 600;
           cursor: pointer;
@@ -382,7 +382,7 @@ const CollaborationsSection = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, #FFD700, #FFEC8B, #D4AF37);
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
           opacity: 0;
           transition: opacity var(--transition-normal);
           z-index: -1;
@@ -393,21 +393,21 @@ const CollaborationsSection = () => {
         }
 
         .btn:hover {
-          color: #000000;
+          color: #FFFFFF;
           transform: translateY(-3px);
           box-shadow: var(--shadow-lg);
           border-color: transparent;
         }
 
         .btn-primary {
-          background: linear-gradient(135deg, #FFD700, #FFEC8B, #D4AF37);
-          color: #000000;
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          color: #FFFFFF;
           border: none;
           box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-          background: linear-gradient(135deg, #FFEC8B, #FFD700, #D4AF37);
+          background: linear-gradient(135deg, #A855F7, #C084FC);
           transform: translateY(-3px);
           box-shadow: var(--shadow-xl);
         }
@@ -448,28 +448,22 @@ const CollaborationsSection = () => {
       <section id="collaborations" className="collaborations-section">
         <div className="container">
           <div className="section-header">
-            <h2>Collaborations & Partnerships</h2>
-            <p>Joining forces with talented artists to create unique sounds</p>
+            <h2>Collaborations</h2>
+            <p>Working with other artists</p>
           </div>
 
           <div className="tabs">
-            <div 
-              className={`tab ${activeTab === 'collaborations' ? 'active' : ''}`} 
+            <div
+              className={`tab ${activeTab === 'collaborations' ? 'active' : ''}`}
               onClick={() => setActiveTab('collaborations')}
             >
               <FiUsers /> Collaborations
             </div>
-            <div 
-              className={`tab ${activeTab === 'featured' ? 'active' : ''}`} 
+            <div
+              className={`tab ${activeTab === 'featured' ? 'active' : ''}`}
               onClick={() => setActiveTab('featured')}
             >
-              <FiAward /> Featured Artists
-            </div>
-            <div 
-              className={`tab ${activeTab === 'projects' ? 'active' : ''}`} 
-              onClick={() => setActiveTab('projects')}
-            >
-              <FiMusic /> Projects
+              <FiAward /> Artists
             </div>
           </div>
 
@@ -514,7 +508,7 @@ const CollaborationsSection = () => {
                   
                   <div className={`expanded-content ${expandedCollab === collab.id ? 'expanded' : ''}`}>
                     <div className="track-list">
-                      <h4 style={{ color: '#FFD700', marginBottom: '1rem', fontSize: '1.2rem', fontWeight: '700' }}>Tracks</h4>
+                      <h4 style={{ color: '#A855F7', marginBottom: '1rem', fontSize: '1.2rem', fontWeight: '700' }}>Tracks</h4>
                       {collab.tracks.map((track, idx) => (
                         <div key={idx} className="track-item">
                           <div className="track-title">{track.title}</div>
@@ -526,7 +520,7 @@ const CollaborationsSection = () => {
                     </div>
 
                     <div className="achievements">
-                      <h4 style={{ color: '#FFD700', marginBottom: '1rem', fontSize: '1.2rem', fontWeight: '700' }}>Achievements</h4>
+                      <h4 style={{ color: '#A855F7', marginBottom: '1rem', fontSize: '1.2rem', fontWeight: '700' }}>Achievements</h4>
                       {collab.achievements.map((achievement, idx) => (
                         <div key={idx} className="achievement">
                           <FiAward className="achievement-icon" />
@@ -555,58 +549,6 @@ const CollaborationsSection = () => {
               </div>
             </div>
           )}
-
-          {activeTab === 'projects' && (
-            <div className="projects-list">
-              <div className="collaborations-grid">
-                {collaborations.map((collab) => (
-                  <div key={collab.id} className="collab-card">
-                    <div className="collab-info">
-                      <h3 className="collab-title">{collab.title}</h3>
-
-                      <div className="collab-meta">
-                        <div className="meta-item">
-                          <FiCalendar className="meta-icon" />
-                          <span>{collab.year}</span>
-                        </div>
-                        <div className="meta-item">
-                          <FiMusic className="meta-icon" />
-                          <span>{collab.type}</span>
-                        </div>
-                        <div className="meta-item">
-                          <FiMapPin className="meta-icon" />
-                          <span>{collab.location}</span>
-                        </div>
-                      </div>
-
-                      <p className="collab-description">{collab.description}</p>
-
-                      <div className="action-buttons" style={{ justifyContent: 'flex-start', gap: '1rem' }}>
-                        <button className="btn">
-                          <FiPlay /> Preview
-                        </button>
-                        <button className="btn btn-primary">
-                          <FiExternalLink /> Listen
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <div className="action-buttons">
-            <button className="btn">
-              <FiUsers /> View All Collaborations
-            </button>
-            <button className="btn btn-primary">
-              <FiMusic /> Explore Projects
-            </button>
-            <button className="btn">
-              <FiExternalLink /> Connect
-            </button>
-          </div>
         </div>
       </section>
     </>

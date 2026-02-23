@@ -337,9 +337,8 @@ const AboutSection = () => {
               <div className="section-subtitle">About Me</div>
               <h2 className="about-title">The Voice of Nairobi</h2>
               <p className="about-description">
-                I'm Kalipupa, a Kenyan artist who brings the authentic stories of Nairobi to life through music.
-                My journey began in the bustling streets of the city, where I discovered my passion for storytelling
-                through hip-hop and contemporary African sounds.
+                Kalipupa is a Kenyan artist from Nairobi. The music started in the city streets,
+                where the passion for storytelling through hip-hop and contemporary African sounds grew.
               </p>
 
               <div className="about-highlights">
@@ -352,15 +351,14 @@ const AboutSection = () => {
               </div>
 
               <p className="about-description">
-                My music reflects the diversity and energy of Kenya, blending traditional rhythms with modern
-                production techniques. Each track is a narrative that captures the essence of urban life,
-                cultural heritage, and personal experiences.
+                The music reflects the diversity and energy of Kenya, blending traditional rhythms with modern
+                production. Each track captures urban life, cultural heritage, and personal experiences.
               </p>
 
               <div className="quote-section">
                 <p className="quote">
-                  "Music is the universal language that connects hearts across all boundaries.
-                  Through my art, I aim to share the stories of my people and celebrate the rich
+                  "Music connects hearts across all boundaries.
+                  Through my art, I share the stories of my people and celebrate the rich
                   culture of Kenya."
                   <span className="quote-author">- Kalipupa</span>
                 </p>

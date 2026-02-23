@@ -1,4 +1,4 @@
-// src/components/AboutSection.js - Dark Theme About Section for Artist
+// src/components/AboutSection.js - NAIROBI HIPHOP ARTIST ABOUT SECTION
 import React from 'react';
 import { FiMusic, FiMic, FiGlobe, FiAward, FiHeart, FiMapPin, FiUsers, FiHeadphones } from 'react-icons/fi';
 
@@ -46,7 +46,7 @@ const AboutSection = () => {
           position: relative;
           border-radius: 12px;
           overflow: hidden;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(124, 58, 237, 0.15);
           transition: transform 0.4s ease;
           display: flex;
           align-items: center;
@@ -63,7 +63,7 @@ const AboutSection = () => {
           background: rgba(30, 30, 30, 0.9);
           border-radius: 12px;
           text-align: center;
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.3);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
           display: flex;
           flex-direction: column;
@@ -73,7 +73,7 @@ const AboutSection = () => {
 
         .about-image-icon {
           font-size: 4rem;
-          color: #FFD700;
+          color: #A855F7;
           margin-bottom: 1rem;
           transition: transform 0.3s ease;
         }
@@ -90,7 +90,7 @@ const AboutSection = () => {
         }
 
         .about-image-subtitle {
-          color: #FFD700;
+          color: #A855F7;
           font-size: 1rem;
           text-transform: uppercase;
           letter-spacing: 1.5px;
@@ -106,7 +106,7 @@ const AboutSection = () => {
 
         .section-subtitle {
           font-size: 1rem;
-          color: #FFD700;
+          color: #A855F7;
           text-transform: uppercase;
           letter-spacing: 2px;
           margin-bottom: 1rem;
@@ -122,7 +122,7 @@ const AboutSection = () => {
           left: 0;
           width: 50px;
           height: 3px;
-          background: #FFD700;
+          background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
         }
 
@@ -141,7 +141,7 @@ const AboutSection = () => {
           left: 0;
           width: 80px;
           height: 3px;
-          background: #FFD700;
+          background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
         }
 
@@ -166,21 +166,21 @@ const AboutSection = () => {
           padding: 1rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.2);
           transition: all 0.3s ease;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .highlight-item:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-          border-color: #FFD700;
+          box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
+          border-color: rgba(124, 58, 237, 0.5);
           background: rgba(40, 40, 40, 0.8);
         }
 
         .highlight-icon {
           font-size: 1.5rem;
-          color: #FFD700;
+          color: #A855F7;
           min-width: 1.8rem;
         }
 
@@ -202,21 +202,21 @@ const AboutSection = () => {
           padding: 1.5rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.2);
           transition: all 0.3s ease;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .stat-item:hover {
           transform: translateY(-5px);
-          border-color: #FFD700;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          border-color: rgba(124, 58, 237, 0.5);
+          box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
           background: rgba(40, 40, 40, 0.8);
         }
 
         .stat-icon {
           font-size: 1.8rem;
-          color: #FFD700;
+          color: #A855F7;
           margin-bottom: 0.5rem;
         }
 
@@ -224,7 +224,7 @@ const AboutSection = () => {
           font-size: 1.8rem;
           font-weight: 800;
           margin-bottom: 0.5rem;
-          color: #FFD700;
+          color: #A855F7;
         }
 
         .stat-label {
@@ -240,7 +240,7 @@ const AboutSection = () => {
           padding: 2rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
-          border-left: 4px solid #FFD700;
+          border-left: 4px solid #7C3AED;
           position: relative;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
@@ -261,7 +261,7 @@ const AboutSection = () => {
           top: -1rem;
           left: -1rem;
           font-size: 2.5rem;
-          color: rgba(255, 215, 0, 0.15);
+          color: rgba(168, 85, 247, 0.15);
           font-family: serif;
           line-height: 1;
         }
@@ -270,7 +270,7 @@ const AboutSection = () => {
           display: block;
           margin-top: 1rem;
           text-align: right;
-          color: #FFD700;
+          color: #A855F7;
           font-weight: 600;
           font-size: 1rem;
         }
@@ -285,8 +285,8 @@ const AboutSection = () => {
           height: 2px;
           background: repeating-linear-gradient(
             to right,
-            #FFD700 0,
-            #FFD700 8px,
+            #7C3AED 0,
+            #7C3AED 8px,
             transparent 8px,
             transparent 16px
           );

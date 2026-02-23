@@ -1,4 +1,4 @@
-// Enhanced ContactSection with improved design and functionality
+// Enhanced ContactSection - NAIROBI HIPHOP ARTIST CONTACT
 import React, { useState } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiMessageSquare, FiUser, FiCheck } from 'react-icons/fi';
 
@@ -19,8 +19,6 @@ const ContactSection = () => {
       ...prev,
       [name]: value
     }));
-    
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -31,51 +29,28 @@ const ContactSection = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
-    }
-    
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-    
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
-    }
-    
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (formData.message.length < 10) {
-      newErrors.message = 'Message should be at least 10 characters';
-    }
-    
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
+    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    else if (formData.message.length < 10) newErrors.message = 'Message should be at least 10 characters';
     return newErrors;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
-    
     setIsSubmitting(true);
-    
-    // Simulate form submission
     try {
       await new Promise(resolve => setTimeout(resolve, 1500));
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
@@ -84,24 +59,9 @@ const ContactSection = () => {
   };
 
   const contactInfo = [
-    {
-      icon: <FiMail />,
-      title: 'Email',
-      value: 'contact@kalipupa.com',
-      description: 'Send us a message anytime'
-    },
-    {
-      icon: <FiPhone />,
-      title: 'Phone',
-      value: '+254 700 000 000',
-      description: 'Call for bookings and inquiries'
-    },
-    {
-      icon: <FiMapPin />,
-      title: 'Location',
-      value: 'Nairobi, Kenya',
-      description: 'Based in the heart of Nairobi'
-    }
+    { icon: <FiMail />, title: 'Email', value: 'contact@kalipupa.com', description: 'Send us a message anytime' },
+    { icon: <FiPhone />, title: 'Phone', value: '+254 700 000 000', description: 'Call for bookings and inquiries' },
+    { icon: <FiMapPin />, title: 'Location', value: 'Nairobi, Kenya', description: 'Based in the heart of Nairobi' }
   ];
 
   return (
@@ -136,7 +96,7 @@ const ContactSection = () => {
           transform: translateX(-50%);
           width: 100px;
           height: 5px;
-          background: linear-gradient(90deg, #FFD700, #FFEC8B, #D4AF37);
+          background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
           border-radius: 3px;
         }
 
@@ -165,15 +125,15 @@ const ContactSection = () => {
           background: rgba(30, 30, 30, 0.9);
           border-radius: 20px;
           padding: 2rem;
-          border: 1px solid rgba(255, 215, 0, 0.1);
+          border: 1px solid rgba(124, 58, 237, 0.2);
           transition: all 0.3s ease;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .info-card:hover {
           transform: translateY(-5px);
-          border-color: rgba(255, 215, 0, 0.3);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+          border-color: rgba(124, 58, 237, 0.4);
+          box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
         }
 
         .info-item {
@@ -185,7 +145,7 @@ const ContactSection = () => {
 
         .info-icon {
           font-size: 1.8rem;
-          color: #FFD700;
+          color: #A855F7;
           min-width: 2.5rem;
           margin-top: 0.2rem;
         }
@@ -204,7 +164,7 @@ const ContactSection = () => {
         }
 
         .info-value {
-          color: #FFD700;
+          color: #A855F7;
           font-weight: 600;
           font-size: 1.1rem;
         }
@@ -218,18 +178,18 @@ const ContactSection = () => {
         .social-link {
           width: 46px;
           height: 46px;
-          background: rgba(255, 255, 255, 0.08);
-          border: 1px solid rgba(255, 215, 0, 0.15);
+          background: rgba(124, 58, 237, 0.15);
+          border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #CCCCCC;
+          color: #A855F7;
           transition: all 0.3s ease;
           text-decoration: none;
           position: relative;
           overflow: hidden;
-          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
         }
 
         .social-link::before {
@@ -239,29 +199,29 @@ const ContactSection = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, #FFD700, #FFEC8B);
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
           opacity: 0;
           transition: opacity 0.3s ease;
           border-radius: 50%;
         }
 
         .social-link:hover::before {
-          opacity: 0.15;
+          opacity: 0.2;
         }
 
         .social-link:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 215, 0, 0.25);
-          color: #FFD700;
+          background: rgba(124, 58, 237, 0.2);
+          border-color: rgba(124, 58, 237, 0.5);
+          color: #C084FC;
           transform: translateY(-4px) scale(1.15);
-          box-shadow: 0 8px 20px rgba(255, 215, 0, 0.15);
+          box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
         }
 
         .contact-form {
           background: rgba(30, 30, 30, 0.9);
           border-radius: 20px;
           padding: 2.5rem;
-          border: 1px solid rgba(255, 215, 0, 0.1);
+          border: 1px solid rgba(124, 58, 237, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
@@ -281,7 +241,7 @@ const ContactSection = () => {
           width: 100%;
           padding: 1rem 1.2rem;
           background: rgba(40, 40, 40, 0.8);
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 12px;
           color: #FFFFFF;
           font-size: 1rem;
@@ -290,8 +250,8 @@ const ContactSection = () => {
 
         .form-input:focus {
           outline: none;
-          border-color: #FFD700;
-          box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+          border-color: #A855F7;
+          box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
         }
 
         .form-input::placeholder {
@@ -302,7 +262,7 @@ const ContactSection = () => {
           width: 100%;
           padding: 1rem 1.2rem;
           background: rgba(40, 40, 40, 0.8);
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 12px;
           color: #FFFFFF;
           font-size: 1rem;
@@ -313,8 +273,8 @@ const ContactSection = () => {
 
         .form-textarea:focus {
           outline: none;
-          border-color: #FFD700;
-          box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+          border-color: #A855F7;
+          box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
         }
 
         .form-error {
@@ -329,8 +289,8 @@ const ContactSection = () => {
         .submit-btn {
           width: 100%;
           padding: 1.2rem;
-          background: linear-gradient(135deg, #FFD700, #FFEC8B, #D4AF37);
-          color: #000000;
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          color: #FFFFFF;
           border: none;
           border-radius: 12px;
           font-size: 1.1rem;
@@ -344,9 +304,9 @@ const ContactSection = () => {
         }
 
         .submit-btn:hover {
-          background: linear-gradient(135deg, #FFEC8B, #FFD700, #D4AF37);
+          background: linear-gradient(135deg, #A855F7, #C084FC);
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+          box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
         }
 
         .submit-btn:disabled {
@@ -404,7 +364,7 @@ const ContactSection = () => {
           <div className="contact-container">
             <div className="contact-info">
               <h3 style={{ color: '#FFFFFF', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Contact Information</h3>
-              
+
               {contactInfo.map((info, index) => (
                 <div key={index} className="info-card">
                   <div className="info-item">
@@ -442,7 +402,7 @@ const ContactSection = () => {
 
             <div className="contact-form">
               <h3 style={{ color: '#FFFFFF', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Send a Message</h3>
-              
+
               {submitSuccess && (
                 <div className="success-message">
                   <FiCheck className="form-icon" />
@@ -515,8 +475,8 @@ const ContactSection = () => {
                   {errors.message && <div className="form-error"><FiMessageSquare /> {errors.message}</div>}
                 </div>
 
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="submit-btn"
                   disabled={isSubmitting}
                 >

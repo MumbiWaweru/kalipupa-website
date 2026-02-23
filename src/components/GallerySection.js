@@ -1,4 +1,4 @@
-// src/components/GallerySection.js - Artist Photo Gallery
+// src/components/GallerySection.js - NAIROBI HIPHOP ARTIST PHOTO GALLERY
 import React, { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -41,7 +41,7 @@ const GallerySection = () => {
         .gallery-section {
           position: relative;
           padding: 6rem 0;
-          background: linear-gradient(135deg, #1a0a0a 0%, #2d1810 50%, #1a0a0a 100%);
+          background: linear-gradient(135deg, #0F0F0F 0%, #1a1025 50%, #0F0F0F 100%);
         }
 
         .gallery-container {
@@ -54,9 +54,9 @@ const GallerySection = () => {
           position: relative;
           overflow: hidden;
           border-radius: 20px;
-          box-shadow: 0 20px 50px rgba(255, 87, 34, 0.2), 0 10px 30px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 20px 50px rgba(124, 58, 237, 0.2), 0 10px 30px rgba(0, 0, 0, 0.4);
           height: 500px;
-          border: 2px solid rgba(255, 152, 0, 0.3);
+          border: 2px solid rgba(124, 58, 237, 0.3);
         }
 
         .carousel-slide {
@@ -86,7 +86,7 @@ const GallerySection = () => {
           left: 0;
           right: 0;
           padding: 2rem;
-          background: linear-gradient(to top, rgba(26, 10, 10, 0.95), rgba(45, 24, 16, 0.7), transparent);
+          background: linear-gradient(to top, rgba(15, 15, 15, 0.95), rgba(26, 16, 37, 0.7), transparent);
           color: white;
           z-index: 2;
         }
@@ -94,13 +94,13 @@ const GallerySection = () => {
         .carousel-title {
           font-size: 1.8rem;
           margin-bottom: 0.5rem;
-          color: #FF9800;
-          text-shadow: 0 2px 10px rgba(255, 152, 0, 0.3);
+          color: #A855F7;
+          text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
         }
 
         .carousel-description {
           font-size: 1.1rem;
-          color: #FFECD2;
+          color: #E9D5FF;
           line-height: 1.6;
         }
 
@@ -116,7 +116,7 @@ const GallerySection = () => {
         }
 
         .carousel-btn {
-          background: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
+          background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
           border: none;
           width: 60px;
           height: 60px;
@@ -128,13 +128,13 @@ const GallerySection = () => {
           justify-content: center;
           font-size: 1.6rem;
           transition: all 0.3s ease;
-          box-shadow: 0 5px 20px rgba(255, 87, 34, 0.4);
+          box-shadow: 0 5px 20px rgba(124, 58, 237, 0.4);
         }
 
         .carousel-btn:hover {
-          background: linear-gradient(135deg, #FF9800 0%, #FFC107 100%);
+          background: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
           transform: scale(1.1);
-          box-shadow: 0 8px 25px rgba(255, 152, 0, 0.5);
+          box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
         }
 
         .carousel-indicators {
@@ -151,20 +151,20 @@ const GallerySection = () => {
           width: 12px;
           height: 12px;
           border-radius: 50%;
-          background: rgba(255, 224, 178, 0.4);
+          background: rgba(168, 85, 247, 0.4);
           cursor: pointer;
           transition: all 0.3s ease;
           border: 2px solid transparent;
         }
 
         .indicator:hover {
-          background: rgba(255, 152, 0, 0.6);
+          background: rgba(168, 85, 247, 0.7);
         }
 
         .indicator.active {
-          background: #FF9800;
-          border-color: #FFC107;
-          box-shadow: 0 0 15px rgba(255, 152, 0, 0.6);
+          background: #A855F7;
+          border-color: #C084FC;
+          box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
         }
 
         @media (max-width: 768px) {

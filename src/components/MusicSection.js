@@ -1,4 +1,4 @@
-// MusicSection - Dark Theme Music Section for Artist
+// MusicSection - NAIROBI HIPHOP ARTIST MUSIC SECTION
 import React, { useState } from 'react';
 import { FiPlay, FiExternalLink, FiMusic, FiHeadphones, FiClock, FiHeart, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -67,7 +67,6 @@ const MusicSection = () => {
 
   const playTrack = (trackIndex) => {
     setCurrentTrack(trackIndex);
-    // In a real app, this would play the track
     console.log(`Playing track: ${projects[activeProject].tracksList[trackIndex].title}`);
   };
 
@@ -111,14 +110,8 @@ const MusicSection = () => {
           transform: translateX(-50%);
           width: 80px;
           height: 3px;
-          background: #FFD700;
+          background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
-        }
-
-        .section-header p {
-          font-size: 1.1rem;
-          color: #444444;
-          margin-top: 0.5rem;
         }
 
         .section-header p {
@@ -139,7 +132,7 @@ const MusicSection = () => {
           padding: 2rem 1.5rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.2);
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
@@ -152,15 +145,15 @@ const MusicSection = () => {
 
         .music-stat:hover {
           transform: translateY(-8px);
-          border-color: #FFD700;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+          border-color: rgba(124, 58, 237, 0.5);
+          box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
           background: rgba(40, 40, 40, 0.8);
         }
 
         .music-stat-icon {
           font-size: 2rem;
           margin-bottom: 0.8rem;
-          color: #FFD700;
+          color: #A855F7;
           transition: transform 0.3s ease;
         }
 
@@ -172,7 +165,7 @@ const MusicSection = () => {
           font-size: 2.2rem;
           font-weight: 800;
           margin-bottom: 0.5rem;
-          color: #FFD700;
+          color: #A855F7;
         }
 
         .music-stat-label {
@@ -193,8 +186,8 @@ const MusicSection = () => {
 
         .project-nav-btn {
           background: rgba(30, 30, 30, 0.7);
-          border: 1px solid rgba(255, 215, 0, 0.2);
-          color: #FFD700;
+          border: 1px solid rgba(124, 58, 237, 0.3);
+          color: #A855F7;
           width: 40px;
           height: 40px;
           border-radius: 8px;
@@ -206,9 +199,9 @@ const MusicSection = () => {
         }
 
         .project-nav-btn:hover {
-          background: #FFD700;
-          color: #000000;
-          border-color: #FFD700;
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          color: #FFFFFF;
+          border-color: transparent;
           transform: scale(1.1);
         }
 
@@ -223,7 +216,7 @@ const MusicSection = () => {
         .project-tab {
           padding: 0.8rem 1.5rem;
           background: rgba(30, 30, 30, 0.7);
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.2);
           border-radius: 8px;
           color: #CCCCCC;
           cursor: pointer;
@@ -231,14 +224,14 @@ const MusicSection = () => {
         }
 
         .project-tab.active {
-          background: #FFD700;
-          border-color: #FFD700;
-          color: #000000;
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          border-color: transparent;
+          color: #FFFFFF;
         }
 
         .project-tab:hover:not(.active) {
           background: rgba(40, 40, 40, 0.8);
-          border-color: rgba(255, 215, 0, 0.3);
+          border-color: rgba(124, 58, 237, 0.4);
         }
 
         .project-display {
@@ -255,7 +248,7 @@ const MusicSection = () => {
           height: 280px;
           border-radius: 12px;
           overflow: hidden;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
           position: relative;
         }
 
@@ -272,7 +265,7 @@ const MusicSection = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+          background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
         }
 
         .play-overlay {
@@ -282,12 +275,12 @@ const MusicSection = () => {
           transform: translate(-50%, -50%);
           width: 60px;
           height: 60px;
-          background: rgba(255, 215, 0, 0.9);
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #000000;
+          color: #FFFFFF;
           font-size: 1.5rem;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -300,7 +293,7 @@ const MusicSection = () => {
 
         .play-overlay:hover {
           transform: translate(-50%, -50%) scale(1.1);
-          background: rgba(255, 236, 139, 0.9);
+          background: linear-gradient(135deg, #A855F7, #C084FC);
         }
 
         .project-info {
@@ -323,8 +316,8 @@ const MusicSection = () => {
         }
 
         .project-type {
-          background: rgba(255, 215, 0, 0.1);
-          color: #FFD700;
+          background: rgba(124, 58, 237, 0.15);
+          color: #A855F7;
           padding: 0.4rem 1rem;
           border-radius: 8px;
           font-size: 0.9rem;
@@ -343,7 +336,7 @@ const MusicSection = () => {
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
           padding: 1.5rem;
-          border: 1px solid rgba(255, 215, 0, 0.2);
+          border: 1px solid rgba(124, 58, 237, 0.2);
         }
 
         .project-description {
@@ -364,26 +357,26 @@ const MusicSection = () => {
           background: rgba(40, 40, 40, 0.7);
           border-radius: 8px;
           margin-bottom: 0.8rem;
-          border: 1px solid rgba(255, 215, 0, 0.1);
+          border: 1px solid rgba(124, 58, 237, 0.15);
           transition: all 0.3s ease;
           cursor: pointer;
         }
 
         .track-item:hover {
-          border-color: #FFD700;
+          border-color: rgba(124, 58, 237, 0.4);
           transform: translateY(-2px);
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
         }
 
         .track-item.playing {
-          background: rgba(255, 215, 0, 0.1);
-          border-color: #FFD700;
+          background: rgba(124, 58, 237, 0.15);
+          border-color: rgba(124, 58, 237, 0.4);
         }
 
         .track-number {
           width: 35px;
           font-weight: 700;
-          color: #FFD700;
+          color: #A855F7;
           font-size: 1.1rem;
           margin-right: 1rem;
         }
@@ -410,13 +403,13 @@ const MusicSection = () => {
           display: flex;
           align-items: center;
           gap: 0.3rem;
-          color: #FFD700;
+          color: #A855F7;
         }
 
         .play-btn {
           background: rgba(30, 30, 30, 0.7);
-          border: 1px solid rgba(255, 215, 0, 0.2);
-          color: #FFD700;
+          border: 1px solid rgba(124, 58, 237, 0.3);
+          color: #A855F7;
           width: 40px;
           height: 40px;
           border-radius: 8px;
@@ -429,9 +422,9 @@ const MusicSection = () => {
         }
 
         .play-btn:hover {
-          background: #FFD700;
-          color: #000000;
-          border-color: #FFD700;
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          color: #FFFFFF;
+          border-color: transparent;
           transform: scale(1.1);
         }
 
@@ -445,8 +438,8 @@ const MusicSection = () => {
         .btn {
           padding: 0.9rem 1.8rem;
           background: transparent;
-          border: 2px solid #FFD700;
-          color: #FFD700;
+          border: 2px solid #7C3AED;
+          color: #A855F7;
           font-size: 1rem;
           font-weight: 600;
           cursor: pointer;
@@ -460,26 +453,26 @@ const MusicSection = () => {
         }
 
         .btn:hover {
-          color: #000000;
+          color: #FFFFFF;
           transform: translateY(-3px);
-          box-shadow: 0 6px 16px rgba(255, 215, 0, 0.3);
-          background: #FFD700;
+          box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          border-color: transparent;
         }
 
         .btn-primary {
-          background: #FFD700;
-          color: #000000;
+          background: linear-gradient(135deg, #7C3AED, #A855F7);
+          color: #FFFFFF;
           border: none;
-          box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
         }
 
         .btn-primary:hover {
-          background: #FFEC8B;
+          background: linear-gradient(135deg, #A855F7, #C084FC);
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+          box-shadow: 0 8px 20px rgba(124, 58, 237, 0.5);
         }
 
-        /* Section divider style */
         .section-divider {
           position: absolute;
           top: 50%;
@@ -489,8 +482,8 @@ const MusicSection = () => {
           height: 2px;
           background: repeating-linear-gradient(
             to right,
-            #FFD700 0,
-            #FFD700 8px,
+            #7C3AED 0,
+            #7C3AED 8px,
             transparent 8px,
             transparent 16px
           );
@@ -555,7 +548,7 @@ const MusicSection = () => {
 
       <section id="music" className="music-section">
         <div className="section-divider"></div>
-        
+
         <div className="container">
           <div className="section-header">
             <h2>Music & Discography</h2>

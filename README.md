@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Kalipupa - Nairobi HipHop Artist Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Official website for **Kalipupa**, a Nairobi-based HipHop artist creating authentic narratives through music that blends traditional sounds with contemporary beats.
 
-## Available Scripts
+## 🎨 Design
 
-In the project directory, you can run:
+The website features a modern, sophisticated design inspired by contemporary artistic press aesthetics:
 
-### `npm start`
+- **Color Palette**: Purple/Violet gradients (#7C3AED, #A855F7, #EC4899) for creativity and sophistication
+- **Dark Theme**: Deep blacks (#0F0F0F) for a premium, modern look
+- **Gradient Accents**: Purple-to-pink gradients throughout for visual interest
+- **Smooth Animations**: Fade-in and slide-up animations for engaging user experience
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Responsive Design**: Mobile-first, works on all devices
+- **Smooth Scrolling**: Navigation with smooth scroll to sections
+- **Music Player**: Integrated music player for tracks
+- **Photo Gallery**: Showcase of performances and studio sessions
+- **Social Media Integration**: Links to all major platforms (Spotify, SoundCloud, YouTube, Instagram, TikTok, Facebook)
+- **Contact Section**: Booking and management contact information
 
-### `npm test`
+## 📦 Sections
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Home** - Hero section with artist introduction and stats
+- **About** - Artist biography and background
+- **Music** - Music catalog with streaming links
+- **Collaborations** - Featured collaborations
+- **Gallery** - Photo gallery from performances
+- **Contact** - Contact form and social links
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React** 18.2.0
+- **React Icons** 4.11.0
+- **CSS3** - Custom styling with gradients and animations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏃 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (v14 or higher)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd kenyan-artist
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start the development server:
+```bash
+npm start
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📦 Build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run build
+```
 
-### Code Splitting
+The build folder is ready for deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🌐 Deployment
 
-### Analyzing the Bundle Size
+This site is deployed to Vercel. Visit [kalipupa.vercel.app](https://kalipupa.vercel.app) (update with actual URL).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📱 Social Links
 
-### Making a Progressive Web App
+- **Instagram**: [@nurahkalipupa](https://www.instagram.com/nurahkalipupa)
+- **Facebook**: [Kalipupa](https://www.facebook.com/share/17zkF76QGE/)
+- **YouTube**: [@kalipupa2324](https://youtube.com/@kalipupa2324)
+- **TikTok**: [@kalipupa](https://www.tiktok.com/@kalipupa)
+- **Spotify**: [Kalipupa](https://open.spotify.com/artist/kalipupa)
+- **SoundCloud**: [Kalipupa](https://soundcloud.com/user-727292764)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📄 License
 
-### Advanced Configuration
+This project is proprietary. All rights reserved © 2026 Kalipupa.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with 💜 in Nairobi, Kenya

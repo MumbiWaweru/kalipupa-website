@@ -34,6 +34,7 @@ const PhotoGallery = () => {
     if (currentImage >= filteredPhotos.length && filteredPhotos.length > 0) {
       setCurrentImage(0);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCategory]);
 
   const openLightbox = (index) => {

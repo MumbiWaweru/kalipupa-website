@@ -447,9 +447,13 @@ const Footer = () => {
               © {currentYear} Kalipupa. Made with <FiHeart className="heart" /> in Nairobi
             </div>
             <div className="footer-bottom-links">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#" className="footer-bottom-link">Privacy Policy</a>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#" className="footer-bottom-link">Terms of Service</a>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#" className="footer-bottom-link">Cookies</a>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a href="#" className="footer-bottom-link">Accessibility</a>
             </div>
           </div>

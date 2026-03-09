@@ -22,13 +22,16 @@ const HeroSection = () => {
       <style jsx>{`
         .hero-section {
           min-height: 100vh;
+          min-height: calc(var(--vh, 1vh) * 100);
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
           background: #0F0F0F;
           overflow: hidden;
-          padding: 2rem 0;
+          padding: 4rem 0;
+          width: 100%;
+          max-width: 100%;
         }
 
         .hero-container {
@@ -38,9 +41,10 @@ const HeroSection = () => {
           padding: 0 2rem;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 4rem;
+          gap: 3rem;
           align-items: center;
           justify-content: center;
+          width: 100%;
         }
 
         /* Content side */
@@ -51,34 +55,40 @@ const HeroSection = () => {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          width: 100%;
+          max-width: 100%;
         }
 
         .hero-tag {
           display: inline-block;
           background: linear-gradient(135deg, #7C3AED, #A855F7);
           color: #FFFFFF;
-          padding: 0.5rem 1.2rem;
-          font-size: 0.85rem;
+          padding: 0.4rem 1rem;
+          font-size: 0.75rem;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 1.5px;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
           border-radius: 30px;
           box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+          align-self: flex-start;
+          max-width: 100%;
         }
 
         .hero-title {
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          margin-bottom: 1.2rem;
+          font-size: clamp(2rem, 6vw, 4rem);
+          margin-bottom: 1rem;
           line-height: 1.2;
           color: #FFFFFF;
           font-weight: 800;
           animation: fadeInUp 0.8s ease-out 0.2s both;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
         }
 
         .hero-subtitle {
-          font-size: 1.4rem;
-          margin-bottom: 1.5rem;
+          font-size: clamp(1.1rem, 3vw, 1.4rem);
+          margin-bottom: 1rem;
           color: #A855F7;
           font-weight: 600;
           letter-spacing: 0.5px;
@@ -89,115 +99,98 @@ const HeroSection = () => {
         .hero-subtitle::after {
           content: '';
           position: absolute;
-          bottom: -10px;
+          bottom: -8px;
           left: 0;
-          width: 60px;
+          width: 50px;
           height: 3px;
           background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
         }
 
         .hero-description {
-          font-size: 1.1rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           line-height: 1.7;
-          margin-bottom: 2.5rem;
+          margin-bottom: 1.5rem;
           color: #CCCCCC;
-          max-width: 500px;
+          max-width: 100%;
           animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .hero-cta {
           display: flex;
-          gap: 1rem;
+          gap: 0.75rem;
           flex-wrap: wrap;
-          margin-bottom: 2.5rem;
+          margin-bottom: 1.5rem;
           animation: fadeInUp 0.8s ease-out 0.8s both;
+          width: 100%;
         }
 
-        .btn-primary {
+        .btn-primary,
+        .btn-spotify,
+        .btn-secondary {
           background: linear-gradient(135deg, #7C3AED, #A855F7);
           border: none;
           color: #FFFFFF;
           border-radius: 8px;
-          padding: 0.9rem 1.8rem;
+          padding: 0.85rem 1.5rem;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 0.9rem;
           cursor: pointer;
           transition: all 0.3s ease;
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 0.5rem;
           box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+          white-space: nowrap;
+          flex: 1;
+          min-width: auto;
         }
 
-        .btn-primary:hover {
-          background: linear-gradient(135deg, #A855F7, #C084FC);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+        .btn-spotify {
+          background: #1DB954;
         }
 
         .btn-secondary {
           background: transparent;
           border: 2px solid #7C3AED;
           color: #A855F7;
-          border-radius: 8px;
-          padding: 0.9rem 1.8rem;
-          font-weight: 600;
-          font-size: 1rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
+        }
+
+        .btn-primary:hover,
+        .btn-spotify:hover,
+        .btn-secondary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
         }
 
         .btn-secondary:hover {
           background: linear-gradient(135deg, #7C3AED, #A855F7);
           color: #FFFFFF;
-          transform: translateY(-2px);
           border-color: transparent;
-        }
-
-        .btn-spotify {
-          background: #1DB954;
-          border: none;
-          color: #FFFFFF;
-          border-radius: 8px;
-          padding: 0.9rem 1.8rem;
-          font-weight: 600;
-          font-size: 1rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .btn-spotify:hover {
-          background: #1ed760;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 16px rgba(29, 185, 84, 0.4);
         }
 
         .social-links {
           display: flex;
-          gap: 1.2rem;
-          margin-top: 1.5rem;
+          gap: 1rem;
+          margin-top: 1rem;
           animation: fadeInUp 0.8s ease-out 1.0s both;
+          flex-wrap: wrap;
         }
 
         .social-link {
-          width: 42px;
-          height: 42px;
+          width: 40px;
+          height: 40px;
           border-radius: 8px;
           background: rgba(124, 58, 237, 0.15);
           display: flex;
           align-items: center;
           justify-content: center;
           color: #A855F7;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
           transition: all 0.3s ease;
           border: 1px solid rgba(124, 58, 237, 0.3);
+          flex-shrink: 0;
         }
 
         .social-link:hover {
@@ -211,29 +204,30 @@ const HeroSection = () => {
         .hero-stats {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          gap: 1rem;
           animation: fadeInUp 0.8s ease-out 1.2s both;
-          margin-top: 2rem;
+          margin-top: 1.5rem;
+          width: 100%;
         }
 
         .stat-item {
           text-align: center;
-          padding: 1rem;
-          border-left: 3px solid #7C3AED;
+          padding: 0.75rem;
+          border-left: 2px solid #7C3AED;
           background: rgba(124, 58, 237, 0.1);
           border-radius: 6px;
         }
 
         .stat-value {
           display: block;
-          font-size: 2rem;
+          font-size: clamp(1.25rem, 4vw, 2rem);
           font-weight: 800;
           color: #A855F7;
-          margin-bottom: 0.3rem;
+          margin-bottom: 0.25rem;
         }
 
         .stat-label {
-          font-size: 0.9rem;
+          font-size: 0.75rem;
           color: #AAAAAA;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -248,6 +242,7 @@ const HeroSection = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 100%;
         }
 
         .image-wrapper {
@@ -258,15 +253,17 @@ const HeroSection = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 100%;
+          max-width: 450px;
         }
 
         .hero-image {
           width: 100%;
-          height: 450px;
+          height: auto;
+          aspect-ratio: 1 / 1.2;
           object-fit: cover;
           display: block;
           transition: transform 0.5s ease;
-          vertical-align: middle;
         }
 
         .hero-image:hover {
@@ -288,13 +285,12 @@ const HeroSection = () => {
           pointer-events: none;
         }
 
-        /* Section divider style */
         .section-divider {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%) rotate(45deg);
-          width: 200px;
+          width: 100px;
           height: 2px;
           background: repeating-linear-gradient(
             to right,
@@ -307,77 +303,106 @@ const HeroSection = () => {
           z-index: 0;
         }
 
-        /* Responsive */
+        /* Tablet Responsive */
         @media (max-width: 1024px) {
           .hero-container {
             grid-template-columns: 1fr;
             text-align: center;
-            gap: 3rem;
+            gap: 2.5rem;
+            padding: 0 1.5rem;
           }
 
           .hero-content {
             order: 2;
+            align-items: center;
           }
 
           .hero-image-container {
             order: 1;
-            max-width: 500px;
+            max-width: 400px;
             margin: 0 auto;
           }
 
-          .hero-description {
-            margin: 0 auto 2rem;
+          .hero-tag {
+            align-self: center;
+          }
+
+          .hero-subtitle::after {
+            left: 50%;
+            transform: translateX(-50%);
           }
 
           .hero-cta {
             justify-content: center;
-          }
-
-          .hero-stats {
-            justify-content: center;
-            grid-template-columns: repeat(4, 1fr);
           }
 
           .social-links {
             justify-content: center;
           }
-        }
 
-        @media (max-width: 768px) {
           .hero-stats {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          .hero-title {
-            font-size: 2.5rem;
+            max-width: 400px;
           }
         }
 
-        @media (max-width: 600px) {
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+          .hero-section {
+            padding: 3rem 0;
+            min-height: auto;
+          }
+
           .hero-container {
             gap: 2rem;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
+          }
+
+          .hero-image-container {
+            max-width: 300px;
+          }
+
+          .hero-stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+
+          .stat-item {
+            padding: 0.6rem;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .hero-container {
+            gap: 1.5rem;
+            padding: 0 1rem;
           }
 
           .hero-cta {
             flex-direction: column;
             align-items: center;
+            width: 100%;
           }
 
           .btn-primary,
-          .btn-secondary,
-          .btn-spotify {
+          .btn-spotify,
+          .btn-secondary {
             width: 100%;
-            max-width: 280px;
-            justify-content: center;
+            max-width: 100%;
           }
 
-          .hero-stats {
-            grid-template-columns: 1fr 1fr;
+          .hero-image-container {
+            max-width: 250px;
           }
 
-          .stat-item {
-            padding: 0.8rem;
+          .social-links {
+            gap: 0.75rem;
+          }
+
+          .social-link {
+            width: 38px;
+            height: 38px;
+            font-size: 1rem;
           }
         }
 
@@ -464,6 +489,8 @@ const HeroSection = () => {
                 src="/photos/artist/artist1.jpeg"
                 alt="Kalipupa - Nairobi HipHop Artist"
                 className="hero-image"
+                loading="eager"
+                fetchpriority="high"
               />
               <div className="image-overlay"></div>
             </div>

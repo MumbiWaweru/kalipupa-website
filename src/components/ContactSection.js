@@ -69,21 +69,24 @@ const ContactSection = () => {
       <style jsx>{`
         .contact-section {
           position: relative;
-          padding: 6rem 0;
+          padding: 5rem 0;
           background: #0F0F0F;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 4rem;
+          margin-bottom: 2.5rem;
           position: relative;
-          padding-bottom: 2rem;
+          padding-bottom: 1.5rem;
         }
 
         .section-header h2 {
-          font-size: clamp(2.5rem, 5vw, 3rem);
+          font-size: clamp(1.75rem, 5vw, 2.5rem);
           color: #FFFFFF;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           position: relative;
           font-weight: 800;
         }
@@ -91,17 +94,17 @@ const ContactSection = () => {
         .section-header h2::after {
           content: '';
           position: absolute;
-          bottom: -12px;
+          bottom: -10px;
           left: 50%;
           transform: translateX(-50%);
-          width: 100px;
-          height: 5px;
+          width: 60px;
+          height: 3px;
           background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
-          border-radius: 3px;
+          border-radius: 2px;
         }
 
         .section-header p {
-          font-size: 1.2rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           color: #CCCCCC;
           margin-top: 0.5rem;
         }
@@ -109,25 +112,28 @@ const ContactSection = () => {
         .contact-container {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 4rem;
+          gap: 2.5rem;
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 2rem;
+          width: 100%;
         }
 
         .contact-info {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 1.5rem;
+          width: 100%;
         }
 
         .info-card {
           background: rgba(30, 30, 30, 0.9);
-          border-radius: 20px;
-          padding: 2rem;
+          border-radius: 16px;
+          padding: 1.5rem;
           border: 1px solid rgba(124, 58, 237, 0.2);
           transition: all 0.3s ease;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          width: 100%;
         }
 
         .info-card:hover {
@@ -139,45 +145,48 @@ const ContactSection = () => {
         .info-item {
           display: flex;
           align-items: flex-start;
-          gap: 1.2rem;
-          margin-bottom: 1.5rem;
+          gap: 1rem;
+          margin-bottom: 1.25rem;
         }
 
         .info-icon {
-          font-size: 1.8rem;
+          font-size: clamp(1.5rem, 3vw, 1.8rem);
           color: #A855F7;
-          min-width: 2.5rem;
+          min-width: 2rem;
           margin-top: 0.2rem;
+          flex-shrink: 0;
         }
 
         .info-content h4 {
           color: #FFFFFF;
-          margin-bottom: 0.3rem;
-          font-size: 1.2rem;
+          margin-bottom: 0.25rem;
+          font-size: clamp(1rem, 2.5vw, 1.2rem);
           font-weight: 700;
         }
 
         .info-content p {
           color: #CCCCCC;
           margin: 0;
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
+          word-wrap: break-word;
         }
 
         .info-value {
           color: #A855F7;
           font-weight: 600;
-          font-size: 1.1rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
         }
 
         .social-links {
           display: flex;
-          gap: 1.2rem;
+          gap: 0.75rem;
           margin-top: 1rem;
+          flex-wrap: wrap;
         }
 
         .social-link {
-          width: 46px;
-          height: 46px;
+          width: 42px;
+          height: 42px;
           background: rgba(124, 58, 237, 0.15);
           border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 50%;
@@ -190,6 +199,7 @@ const ContactSection = () => {
           position: relative;
           overflow: hidden;
           box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+          flex-shrink: 0;
         }
 
         .social-link::before {
@@ -219,32 +229,33 @@ const ContactSection = () => {
 
         .contact-form {
           background: rgba(30, 30, 30, 0.9);
-          border-radius: 20px;
-          padding: 2.5rem;
+          border-radius: 16px;
+          padding: 2rem;
           border: 1px solid rgba(124, 58, 237, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          width: 100%;
         }
 
         .form-group {
-          margin-bottom: 1.8rem;
+          margin-bottom: 1.25rem;
         }
 
         .form-label {
           display: block;
           color: #FFFFFF;
-          margin-bottom: 0.6rem;
+          margin-bottom: 0.5rem;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .form-input {
           width: 100%;
-          padding: 1rem 1.2rem;
+          padding: 0.9rem 1rem;
           background: rgba(40, 40, 40, 0.8);
           border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 12px;
           color: #FFFFFF;
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
           transition: all 0.3s ease;
         }
 
@@ -260,14 +271,14 @@ const ContactSection = () => {
 
         .form-textarea {
           width: 100%;
-          padding: 1rem 1.2rem;
+          padding: 0.9rem 1rem;
           background: rgba(40, 40, 40, 0.8);
           border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 12px;
           color: #FFFFFF;
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
           resize: vertical;
-          min-height: 150px;
+          min-height: 120px;
           transition: all 0.3s ease;
         }
 
@@ -279,28 +290,28 @@ const ContactSection = () => {
 
         .form-error {
           color: #EF4444;
-          font-size: 0.85rem;
-          margin-top: 0.3rem;
+          font-size: clamp(0.75rem, 2vw, 0.85rem);
+          margin-top: 0.25rem;
           display: flex;
           align-items: center;
-          gap: 0.3rem;
+          gap: 0.25rem;
         }
 
         .submit-btn {
           width: 100%;
-          padding: 1.2rem;
+          padding: 1rem;
           background: linear-gradient(135deg, #7C3AED, #A855F7);
           color: #FFFFFF;
           border: none;
           border-radius: 12px;
-          font-size: 1.1rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0.6rem;
+          gap: 0.5rem;
         }
 
         .submit-btn:hover {
@@ -320,36 +331,72 @@ const ContactSection = () => {
           background: rgba(34, 197, 94, 0.1);
           border: 1px solid rgba(34, 197, 94, 0.3);
           color: #22C55E;
-          padding: 1rem 1.5rem;
+          padding: 1rem 1.25rem;
           border-radius: 12px;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.25rem;
           display: flex;
           align-items: center;
-          gap: 0.6rem;
+          gap: 0.5rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .form-icon {
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
 
+        /* Tablet Responsive */
         @media (max-width: 1024px) {
           .contact-container {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2rem;
           }
         }
 
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+          .contact-section {
+            padding: 4rem 0;
+          }
+
           .contact-container {
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
           }
 
           .contact-form {
-            padding: 2rem;
+            padding: 1.5rem;
           }
 
           .social-links {
-            justify-content: center;
+            justify-content: flex-start;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .contact-section {
+            padding: 3rem 0;
+          }
+
+          .contact-container {
+            padding: 0 1rem;
+          }
+
+          .info-card {
+            padding: 1.25rem;
+          }
+
+          .contact-form {
+            padding: 1.25rem;
+          }
+
+          .form-input,
+          .form-textarea {
+            padding: 0.8rem 0.9rem;
+            font-size: 0.9rem;
+          }
+
+          .submit-btn {
+            padding: 0.9rem;
           }
         }
       `}</style>
@@ -363,7 +410,7 @@ const ContactSection = () => {
 
           <div className="contact-container">
             <div className="contact-info">
-              <h3 style={{ color: '#FFFFFF', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Contact Information</h3>
+              <h3 style={{ color: '#FFFFFF', marginBottom: '1rem', fontSize: 'clamp(1.4rem, 4vw, 1.8rem)' }}>Contact Information</h3>
 
               {contactInfo.map((info, index) => (
                 <div key={index} className="info-card">
@@ -379,21 +426,21 @@ const ContactSection = () => {
               ))}
 
               <div className="info-card">
-                <h4 style={{ color: '#FFFFFF', marginBottom: '1rem', fontSize: '1.2rem' }}>Follow Me</h4>
+                <h4 style={{ color: '#FFFFFF', marginBottom: '0.75rem', fontSize: 'clamp(1.1rem, 3vw, 1.2rem)' }}>Follow Me</h4>
                 <div className="social-links">
-                  <a href="https://instagram.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <a href="https://instagram.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
                     <i className="fab fa-instagram"></i>
                   </a>
-                  <a href="https://twitter.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <a href="https://twitter.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
                     <i className="fab fa-twitter"></i>
                   </a>
-                  <a href="https://facebook.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <a href="https://facebook.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="https://soundcloud.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <a href="https://soundcloud.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="SoundCloud">
                     <i className="fab fa-soundcloud"></i>
                   </a>
-                  <a href="https://spotify.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <a href="https://spotify.com/kalipupa" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Spotify">
                     <i className="fab fa-spotify"></i>
                   </a>
                 </div>
@@ -401,7 +448,7 @@ const ContactSection = () => {
             </div>
 
             <div className="contact-form">
-              <h3 style={{ color: '#FFFFFF', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Send a Message</h3>
+              <h3 style={{ color: '#FFFFFF', marginBottom: '1rem', fontSize: 'clamp(1.4rem, 4vw, 1.8rem)' }}>Send a Message</h3>
 
               {submitSuccess && (
                 <div className="success-message">

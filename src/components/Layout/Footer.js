@@ -43,9 +43,11 @@ const Footer = () => {
         .footer {
           background: #0F0F0F;
           border-top: 1px solid rgba(124, 58, 237, 0.2);
-          padding: 5rem 0 2rem;
+          padding: 4rem 0 2rem;
           position: relative;
           overflow: hidden;
+          width: 100%;
+          max-width: 100%;
         }
 
         .footer::before {
@@ -61,16 +63,16 @@ const Footer = () => {
         .footer-content {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr 1fr;
-          gap: 3rem;
-          margin-bottom: 3rem;
+          gap: 2.5rem;
+          margin-bottom: 2.5rem;
         }
 
         .footer-brand {
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
 
         .footer-logo {
-          font-size: 2.2rem;
+          font-size: clamp(1.5rem, 4vw, 2.2rem);
           font-weight: 800;
           color: #FFFFFF;
           margin-bottom: 1rem;
@@ -83,30 +85,31 @@ const Footer = () => {
         .footer-logo::after {
           content: '';
           display: block;
-          width: 70px;
-          height: 4px;
+          width: 50px;
+          height: 3px;
           background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
-          margin-top: 0.6rem;
+          margin-top: 0.5rem;
           border-radius: 2px;
         }
 
         .footer-description {
           color: #CCCCCC;
           line-height: 1.7;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
           max-width: 400px;
-          font-size: 1.05rem;
+          font-size: clamp(0.9rem, 2.5vw, 1.05rem);
         }
 
         .social-links {
           display: flex;
-          gap: 1.2rem;
-          margin-bottom: 2rem;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+          flex-wrap: wrap;
         }
 
         .social-link {
-          width: 46px;
-          height: 46px;
+          width: 40px;
+          height: 40px;
           background: rgba(124, 58, 237, 0.15);
           border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 50%;
@@ -119,6 +122,7 @@ const Footer = () => {
           position: relative;
           overflow: hidden;
           box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+          flex-shrink: 0;
         }
 
         .social-link::before {
@@ -149,28 +153,29 @@ const Footer = () => {
         .contact-info {
           display: flex;
           flex-direction: column;
-          gap: 0.8rem;
+          gap: 0.6rem;
         }
 
         .contact-item {
           display: flex;
           align-items: center;
-          gap: 0.8rem;
+          gap: 0.6rem;
           color: #CCCCCC;
-          font-size: 0.95rem;
+          font-size: clamp(0.85rem, 2.5vw, 0.95rem);
         }
 
         .contact-icon {
           color: #A855F7;
           font-size: 1rem;
+          flex-shrink: 0;
         }
 
         .footer-section h4 {
-          font-size: 1.3rem;
-          margin-bottom: 1.5rem;
+          font-size: clamp(1.1rem, 3vw, 1.3rem);
+          margin-bottom: 1.25rem;
           color: #FFFFFF;
           position: relative;
-          padding-bottom: 0.6rem;
+          padding-bottom: 0.5rem;
           font-weight: 700;
         }
 
@@ -179,8 +184,8 @@ const Footer = () => {
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 50px;
-          height: 3px;
+          width: 40px;
+          height: 2px;
           background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
           border-radius: 2px;
         }
@@ -190,7 +195,7 @@ const Footer = () => {
         }
 
         .footer-link-item {
-          margin-bottom: 0.8rem;
+          margin-bottom: 0.6rem;
         }
 
         .footer-link {
@@ -199,9 +204,10 @@ const Footer = () => {
           transition: color 0.3s ease;
           background: none;
           border: none;
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
           text-align: left;
           padding: 0;
+          white-space: nowrap;
         }
 
         .footer-link:hover {
@@ -209,18 +215,18 @@ const Footer = () => {
         }
 
         .newsletter-form {
-          margin-top: 1rem;
+          margin-top: 0.75rem;
         }
 
         .newsletter-input {
           width: 100%;
-          padding: 1rem 1.2rem;
+          padding: 0.85rem 1rem;
           background: rgba(40, 40, 40, 0.8);
           border: 1px solid rgba(124, 58, 237, 0.3);
           border-radius: 12px;
           color: #FFFFFF;
-          margin-bottom: 1rem;
-          font-size: 1rem;
+          margin-bottom: 0.75rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
           transition: all 0.3s ease;
         }
 
@@ -236,12 +242,12 @@ const Footer = () => {
 
         .newsletter-btn {
           width: 100%;
-          padding: 1rem;
+          padding: 0.85rem;
           background: linear-gradient(135deg, #7C3AED, #A855F7);
           color: #FFFFFF;
           border: none;
           border-radius: 12px;
-          font-size: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1rem);
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -256,38 +262,41 @@ const Footer = () => {
         .stats-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-          margin-top: 1.5rem;
+          gap: 0.75rem;
+          margin-top: 1.25rem;
         }
 
         .stat-item {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
+          gap: 0.5rem;
           color: #CCCCCC;
-          font-size: 0.9rem;
+          font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
 
         .stat-icon {
           color: #A855F7;
           font-size: 1rem;
+          flex-shrink: 0;
         }
 
         .footer-bottom {
-          padding-top: 3rem;
+          padding-top: 2rem;
           border-top: 1px solid rgba(124, 58, 237, 0.15);
           text-align: center;
           color: #CCCCCC;
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2.5vw, 1rem);
           display: flex;
           justify-content: space-between;
           align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
         }
 
         .copyright {
           display: flex;
           align-items: center;
-          gap: 0.6rem;
+          gap: 0.5rem;
         }
 
         .heart {
@@ -296,42 +305,109 @@ const Footer = () => {
 
         .footer-bottom-links {
           display: flex;
-          gap: 2rem;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          justify-content: flex-end;
         }
 
         .footer-bottom-link {
           color: #CCCCCC;
           text-decoration: none;
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2.5vw, 1rem);
           transition: color 0.3s ease;
+          white-space: nowrap;
         }
 
         .footer-bottom-link:hover {
           color: #A855F7;
         }
 
+        /* Tablet Responsive */
         @media (max-width: 1024px) {
           .footer-content {
             grid-template-columns: 1fr 1fr;
           }
+
+          .footer {
+            padding: 3.5rem 0 1.5rem;
+          }
         }
 
+        /* Mobile Responsive */
         @media (max-width: 768px) {
           .footer-content {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2rem;
+          }
+
+          .footer {
+            padding: 3rem 0 1.5rem;
           }
 
           .footer-bottom {
             flex-direction: column;
             text-align: center;
-            gap: 1.5rem;
+            gap: 1rem;
           }
 
           .footer-bottom-links {
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 1rem;
+          }
+
+          .social-links {
+            justify-content: flex-start;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .footer {
+            padding: 2.5rem 0 1rem;
+          }
+
+          .footer-content {
+            gap: 1.75rem;
+          }
+
+          .footer-description {
+            font-size: 0.9rem;
+          }
+
+          .social-link {
+            width: 38px;
+            height: 38px;
+          }
+
+          .footer-section h4 {
+            font-size: 1.1rem;
+          }
+
+          .footer-link {
+            font-size: 0.9rem;
+          }
+
+          .newsletter-input,
+          .newsletter-btn {
+            padding: 0.75rem;
+            font-size: 0.9rem;
+          }
+
+          .stats-grid {
+            gap: 0.5rem;
+          }
+
+          .stat-item {
+            font-size: 0.8rem;
+          }
+
+          .footer-bottom-links {
+            gap: 0.75rem;
+          }
+
+          .footer-bottom-link {
+            font-size: 0.85rem;
           }
         }
       `}</style>
@@ -425,7 +501,7 @@ const Footer = () => {
 
             <div className="footer-section">
               <h4>Stay Updated</h4>
-              <p style={{ color: '#AAAAAA', fontSize: '0.9rem', marginBottom: '1rem' }}>
+              <p style={{ color: '#AAAAAA', fontSize: 'clamp(0.85rem, 2.5vw, 0.9rem)', marginBottom: '0.75rem' }}>
                 Subscribe for updates on new releases and events
               </p>
               <form className="newsletter-form">
@@ -447,14 +523,10 @@ const Footer = () => {
               © {currentYear} Kalipupa. Made with <FiHeart className="heart" /> in Nairobi
             </div>
             <div className="footer-bottom-links">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" className="footer-bottom-link">Privacy Policy</a>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" className="footer-bottom-link">Terms of Service</a>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" className="footer-bottom-link">Cookies</a>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a href="#" className="footer-bottom-link">Accessibility</a>
+              <button className="footer-bottom-link" onClick={(e) => e.preventDefault()}>Privacy Policy</button>
+              <button className="footer-bottom-link" onClick={(e) => e.preventDefault()}>Terms of Service</button>
+              <button className="footer-bottom-link" onClick={(e) => e.preventDefault()}>Cookies</button>
+              <button className="footer-bottom-link" onClick={(e) => e.preventDefault()}>Accessibility</button>
             </div>
           </div>
         </div>

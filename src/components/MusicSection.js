@@ -83,21 +83,24 @@ const MusicSection = () => {
       <style jsx>{`
         .music-section {
           position: relative;
-          padding: 6rem 0;
+          padding: 5rem 0;
           background: #0F0F0F;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 4rem;
+          margin-bottom: 3rem;
           position: relative;
-          padding-bottom: 2rem;
+          padding-bottom: 1.5rem;
         }
 
         .section-header h2 {
-          font-size: clamp(2rem, 4vw, 2.5rem);
+          font-size: clamp(1.75rem, 5vw, 2.5rem);
           color: #FFFFFF;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           position: relative;
           font-weight: 800;
         }
@@ -108,14 +111,14 @@ const MusicSection = () => {
           bottom: -10px;
           left: 50%;
           transform: translateX(-50%);
-          width: 80px;
+          width: 60px;
           height: 3px;
           background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
         }
 
         .section-header p {
-          font-size: 1.1rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           color: #CCCCCC;
           margin-top: 0.5rem;
         }
@@ -123,13 +126,17 @@ const MusicSection = () => {
         .music-stats {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
-          margin-bottom: 4rem;
+          gap: 1rem;
+          margin-bottom: 3rem;
+          width: 100%;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .music-stat {
           text-align: center;
-          padding: 2rem 1.5rem;
+          padding: 1.5rem 1rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
           border: 1px solid rgba(124, 58, 237, 0.2);
@@ -151,8 +158,8 @@ const MusicSection = () => {
         }
 
         .music-stat-icon {
-          font-size: 2rem;
-          margin-bottom: 0.8rem;
+          font-size: clamp(1.5rem, 4vw, 2rem);
+          margin-bottom: 0.5rem;
           color: #A855F7;
           transition: transform 0.3s ease;
         }
@@ -162,26 +169,26 @@ const MusicSection = () => {
         }
 
         .music-stat-value {
-          font-size: 2.2rem;
+          font-size: clamp(1.5rem, 5vw, 2.2rem);
           font-weight: 800;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
           color: #A855F7;
         }
 
         .music-stat-label {
-          font-size: 0.9rem;
+          font-size: clamp(0.75rem, 2vw, 0.9rem);
           color: #AAAAAA;
           text-transform: uppercase;
           letter-spacing: 1.5px;
           font-weight: 600;
-          margin-top: 0.5rem;
+          margin-top: 0.25rem;
         }
 
         .projects-navigation {
           display: flex;
           justify-content: center;
-          gap: 1rem;
-          margin-bottom: 2rem;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
         }
 
         .project-nav-btn {
@@ -196,6 +203,7 @@ const MusicSection = () => {
           justify-content: center;
           cursor: pointer;
           transition: all 0.3s ease;
+          flex-shrink: 0;
         }
 
         .project-nav-btn:hover {
@@ -207,20 +215,27 @@ const MusicSection = () => {
 
         .project-selector {
           display: flex;
-          gap: 1rem;
-          margin-bottom: 2rem;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
           justify-content: center;
           flex-wrap: wrap;
+          width: 100%;
         }
 
         .project-tab {
-          padding: 0.8rem 1.5rem;
+          padding: 0.6rem 1rem;
           background: rgba(30, 30, 30, 0.7);
           border: 1px solid rgba(124, 58, 237, 0.2);
           border-radius: 8px;
           color: #CCCCCC;
           cursor: pointer;
           transition: all 0.3s ease;
+          font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+          text-align: center;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         .project-tab.active {
@@ -236,20 +251,22 @@ const MusicSection = () => {
 
         .project-display {
           display: flex;
-          gap: 3rem;
+          gap: 2rem;
           align-items: center;
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
           flex-wrap: wrap;
+          width: 100%;
         }
 
         .project-cover {
           flex: 0 0 auto;
-          width: 280px;
-          height: 280px;
+          width: 250px;
+          height: 250px;
           border-radius: 12px;
           overflow: hidden;
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 40px rgba(124, 58, 237, 0.2);
           position: relative;
+          flex-shrink: 0;
         }
 
         .cover-image {
@@ -273,15 +290,15 @@ const MusicSection = () => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
           background: linear-gradient(135deg, #7C3AED, #A855F7);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #FFFFFF;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           cursor: pointer;
           transition: all 0.3s ease;
           opacity: 0;
@@ -298,68 +315,73 @@ const MusicSection = () => {
 
         .project-info {
           flex: 1;
-          min-width: 300px;
+          min-width: 280px;
         }
 
         .project-title {
-          font-size: 1.8rem;
+          font-size: clamp(1.25rem, 4vw, 1.8rem);
           color: #FFFFFF;
           margin-bottom: 0.5rem;
           font-weight: 800;
+          word-wrap: break-word;
         }
 
         .project-meta {
           display: flex;
-          gap: 1.5rem;
-          margin-bottom: 1.5rem;
+          gap: 0.75rem;
+          margin-bottom: 1rem;
           flex-wrap: wrap;
         }
 
         .project-type {
           background: rgba(124, 58, 237, 0.15);
           color: #A855F7;
-          padding: 0.4rem 1rem;
+          padding: 0.3rem 0.75rem;
           border-radius: 8px;
-          font-size: 0.9rem;
+          font-size: clamp(0.75rem, 2.5vw, 0.9rem);
           font-weight: 600;
+          white-space: nowrap;
         }
 
         .project-year {
           background: rgba(30, 30, 30, 0.7);
           color: #CCCCCC;
-          padding: 0.4rem 1rem;
+          padding: 0.3rem 0.75rem;
           border-radius: 8px;
-          font-size: 0.9rem;
-        }
-
-        .project-tracks {
-          background: rgba(30, 30, 30, 0.7);
-          border-radius: 8px;
-          padding: 1.5rem;
-          border: 1px solid rgba(124, 58, 237, 0.2);
+          font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+          white-space: nowrap;
         }
 
         .project-description {
           color: #CCCCCC;
           line-height: 1.7;
-          margin-bottom: 1.5rem;
-          font-size: 1.1rem;
+          margin-bottom: 1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+        }
+
+        .project-tracks {
+          background: rgba(30, 30, 30, 0.7);
+          border-radius: 8px;
+          padding: 1.25rem;
+          border: 1px solid rgba(124, 58, 237, 0.2);
+          width: 100%;
         }
 
         .track-list {
-          margin-top: 1.5rem;
+          margin-top: 1rem;
         }
 
         .track-item {
           display: flex;
           align-items: center;
-          padding: 1rem;
+          padding: 0.75rem;
           background: rgba(40, 40, 40, 0.7);
           border-radius: 8px;
-          margin-bottom: 0.8rem;
+          margin-bottom: 0.5rem;
           border: 1px solid rgba(124, 58, 237, 0.15);
           transition: all 0.3s ease;
           cursor: pointer;
+          gap: 0.75rem;
         }
 
         .track-item:hover {
@@ -374,51 +396,56 @@ const MusicSection = () => {
         }
 
         .track-number {
-          width: 35px;
+          width: 30px;
           font-weight: 700;
           color: #A855F7;
-          font-size: 1.1rem;
-          margin-right: 1rem;
+          font-size: 1rem;
+          flex-shrink: 0;
         }
 
         .track-info {
           flex: 1;
+          min-width: 0;
         }
 
         .track-title {
           font-weight: 600;
           color: #FFFFFF;
           margin-bottom: 0.25rem;
-          font-size: 1.1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .track-meta {
           display: flex;
-          gap: 1.2rem;
+          gap: 1rem;
           color: #AAAAAA;
-          font-size: 0.95rem;
+          font-size: clamp(0.8rem, 2vw, 0.95rem);
         }
 
         .track-duration {
           display: flex;
           align-items: center;
-          gap: 0.3rem;
+          gap: 0.25rem;
           color: #A855F7;
+          white-space: nowrap;
         }
 
         .play-btn {
           background: rgba(30, 30, 30, 0.7);
           border: 1px solid rgba(124, 58, 237, 0.3);
           color: #A855F7;
-          width: 40px;
-          height: 40px;
+          width: 36px;
+          height: 36px;
           border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
           transition: all 0.3s ease;
-          margin-left: 1rem;
+          flex-shrink: 0;
         }
 
         .play-btn:hover {
@@ -430,17 +457,18 @@ const MusicSection = () => {
 
         .action-buttons {
           display: flex;
-          gap: 1rem;
-          margin-top: 2rem;
+          gap: 0.75rem;
+          margin-top: 1.5rem;
           flex-wrap: wrap;
+          width: 100%;
         }
 
         .btn {
-          padding: 0.9rem 1.8rem;
+          padding: 0.75rem 1.5rem;
           background: transparent;
           border: 2px solid #7C3AED;
           color: #A855F7;
-          font-size: 1rem;
+          font-size: 0.85rem;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -450,6 +478,13 @@ const MusicSection = () => {
           position: relative;
           overflow: hidden;
           z-index: 1;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          flex: 1;
+          min-width: auto;
+          white-space: nowrap;
         }
 
         .btn:hover {
@@ -478,7 +513,7 @@ const MusicSection = () => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%) rotate(45deg);
-          width: 150px;
+          width: 100px;
           height: 2px;
           background: repeating-linear-gradient(
             to right,
@@ -491,6 +526,7 @@ const MusicSection = () => {
           z-index: 0;
         }
 
+        /* Tablet Responsive */
         @media (max-width: 1024px) {
           .project-display {
             flex-direction: column;
@@ -498,22 +534,36 @@ const MusicSection = () => {
           }
 
           .project-cover {
-            width: 250px;
-            height: 250px;
+            width: 220px;
+            height: 220px;
           }
 
           .project-info {
             width: 100%;
+            min-width: 100%;
           }
 
           .project-meta {
             justify-content: center;
           }
+
+          .action-buttons {
+            justify-content: center;
+          }
         }
 
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+          .music-section {
+            padding: 4rem 0;
+          }
+
           .music-stats {
-            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+
+          .music-stat {
+            padding: 1.25rem 0.75rem;
           }
 
           .project-selector {
@@ -521,9 +571,18 @@ const MusicSection = () => {
             justify-content: center;
           }
 
+          .project-tab {
+            flex: 0 0 calc(50% - 0.25rem);
+            max-width: calc(50% - 0.25rem);
+          }
+
+          .project-cover {
+            width: 200px;
+            height: 200px;
+          }
+
           .track-item {
-            flex-direction: column;
-            align-items: flex-start;
+            flex-wrap: wrap;
           }
 
           .track-meta {
@@ -532,7 +591,6 @@ const MusicSection = () => {
           }
 
           .play-btn {
-            margin-left: 0;
             margin-top: 0.5rem;
           }
 
@@ -542,6 +600,37 @@ const MusicSection = () => {
 
           .btn {
             width: 100%;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .music-section {
+            padding: 3rem 0;
+          }
+
+          .project-tab {
+            flex: 0 0 100%;
+            max-width: 100%;
+            font-size: 0.8rem;
+            padding: 0.5rem 0.75rem;
+          }
+
+          .project-cover {
+            width: 180px;
+            height: 180px;
+          }
+
+          .project-tracks {
+            padding: 1rem;
+          }
+
+          .track-item {
+            padding: 0.6rem;
+          }
+
+          .track-title {
+            font-size: 0.9rem;
           }
         }
       `}</style>
@@ -569,10 +658,10 @@ const MusicSection = () => {
           </div>
 
           <div className="projects-navigation">
-            <button className="project-nav-btn" onClick={prevProject}>
+            <button className="project-nav-btn" onClick={prevProject} aria-label="Previous project">
               <FiChevronLeft />
             </button>
-            <button className="project-nav-btn" onClick={nextProject}>
+            <button className="project-nav-btn" onClick={nextProject} aria-label="Next project">
               <FiChevronRight />
             </button>
           </div>
@@ -595,11 +684,15 @@ const MusicSection = () => {
                 src={projects[activeProject].coverArt}
                 alt={`${projects[activeProject].title} Cover Art`}
                 className="cover-image"
+                loading="lazy"
               />
               <div className="cover-overlay"></div>
               <div
                 className="play-overlay"
                 onClick={() => playTrack(0)}
+                role="button"
+                tabIndex={0}
+                aria-label="Play album"
               >
                 <FiPlay />
               </div>
@@ -631,13 +724,15 @@ const MusicSection = () => {
           </div>
 
           <div className="project-tracks">
-            <h4 style={{ color: '#FFFFFF', marginBottom: '1.5rem', fontSize: '1.4rem' }}>Track List</h4>
+            <h4 style={{ color: '#FFFFFF', marginBottom: '1rem', fontSize: 'clamp(1.1rem, 3vw, 1.4rem)' }}>Track List</h4>
             <div className="track-list">
               {projects[activeProject].tracksList.map((track, index) => (
                 <div
                   key={index}
                   className={`track-item ${currentTrack === index ? 'playing' : ''}`}
                   onClick={() => playTrack(index)}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div className="track-number">{index + 1}</div>
                   <div className="track-info">
@@ -654,6 +749,7 @@ const MusicSection = () => {
                       e.stopPropagation();
                       playTrack(index);
                     }}
+                    aria-label={`Play ${track.title}`}
                   >
                     <FiPlay />
                   </button>

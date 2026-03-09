@@ -24,11 +24,14 @@ const AboutSection = () => {
       <style jsx>{`
         .about-section {
           position: relative;
-          padding: 6rem 0;
+          padding: 5rem 0;
           background: #0F0F0F;
           display: flex;
           justify-content: center;
           align-items: center;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
         }
 
         .about-container {
@@ -37,9 +40,10 @@ const AboutSection = () => {
           padding: 0 2rem;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 4rem;
+          gap: 3rem;
           align-items: center;
           justify-content: center;
+          width: 100%;
         }
 
         .about-image {
@@ -51,6 +55,7 @@ const AboutSection = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 100%;
         }
 
         .about-image:hover {
@@ -59,7 +64,7 @@ const AboutSection = () => {
 
         .about-image-content {
           position: relative;
-          padding: 3rem;
+          padding: 2.5rem 2rem;
           background: rgba(30, 30, 30, 0.9);
           border-radius: 12px;
           text-align: center;
@@ -69,10 +74,11 @@ const AboutSection = () => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          width: 100%;
         }
 
         .about-image-icon {
-          font-size: 4rem;
+          font-size: clamp(3rem, 6vw, 4rem);
           color: #A855F7;
           margin-bottom: 1rem;
           transition: transform 0.3s ease;
@@ -83,7 +89,7 @@ const AboutSection = () => {
         }
 
         .about-image-title {
-          font-size: 1.5rem;
+          font-size: clamp(1.25rem, 3vw, 1.5rem);
           color: #FFFFFF;
           margin-bottom: 0.5rem;
           font-weight: 700;
@@ -91,7 +97,7 @@ const AboutSection = () => {
 
         .about-image-subtitle {
           color: #A855F7;
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2vw, 1rem);
           text-transform: uppercase;
           letter-spacing: 1.5px;
           font-weight: 600;
@@ -102,14 +108,15 @@ const AboutSection = () => {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          width: 100%;
         }
 
         .section-subtitle {
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2.5vw, 1rem);
           color: #A855F7;
           text-transform: uppercase;
           letter-spacing: 2px;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           position: relative;
           display: inline-block;
           font-weight: 600;
@@ -120,18 +127,19 @@ const AboutSection = () => {
           position: absolute;
           bottom: -6px;
           left: 0;
-          width: 50px;
-          height: 3px;
+          width: 40px;
+          height: 2px;
           background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
         }
 
         .about-title {
-          font-size: clamp(2rem, 4vw, 2.5rem);
+          font-size: clamp(1.5rem, 5vw, 2.5rem);
           color: #FFFFFF;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.25rem;
           position: relative;
           font-weight: 800;
+          word-wrap: break-word;
         }
 
         .about-title::after {
@@ -139,7 +147,7 @@ const AboutSection = () => {
           position: absolute;
           bottom: -10px;
           left: 0;
-          width: 80px;
+          width: 60px;
           height: 3px;
           background: linear-gradient(90deg, #7C3AED, #A855F7);
           border-radius: 2px;
@@ -147,23 +155,24 @@ const AboutSection = () => {
 
         .about-description {
           color: #CCCCCC;
-          font-size: 1.1rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           line-height: 1.7;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
 
         .about-highlights {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 1.2rem;
-          margin-bottom: 2rem;
+          gap: 0.75rem;
+          margin-bottom: 1.5rem;
+          width: 100%;
         }
 
         .highlight-item {
           display: flex;
           align-items: center;
-          gap: 0.8rem;
-          padding: 1rem;
+          gap: 0.6rem;
+          padding: 0.75rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
           border: 1px solid rgba(124, 58, 237, 0.2);
@@ -179,27 +188,31 @@ const AboutSection = () => {
         }
 
         .highlight-icon {
-          font-size: 1.5rem;
+          font-size: clamp(1.25rem, 3vw, 1.5rem);
           color: #A855F7;
-          min-width: 1.8rem;
+          min-width: 1.5rem;
+          flex-shrink: 0;
         }
 
         .highlight-text {
           color: #FFFFFF;
-          font-size: 0.95rem;
+          font-size: clamp(0.85rem, 2.5vw, 0.95rem);
           font-weight: 500;
+          word-wrap: break-word;
         }
 
         .about-stats {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
-          margin-top: 3rem;
+          gap: 1rem;
+          margin-top: 2.5rem;
+          width: 100%;
+          max-width: 100%;
         }
 
         .stat-item {
           text-align: center;
-          padding: 1.5rem;
+          padding: 1.25rem 0.75rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
           border: 1px solid rgba(124, 58, 237, 0.2);
@@ -215,20 +228,20 @@ const AboutSection = () => {
         }
 
         .stat-icon {
-          font-size: 1.8rem;
+          font-size: clamp(1.5rem, 3vw, 1.8rem);
           color: #A855F7;
           margin-bottom: 0.5rem;
         }
 
         .stat-count {
-          font-size: 1.8rem;
+          font-size: clamp(1.5rem, 4vw, 1.8rem);
           font-weight: 800;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
           color: #A855F7;
         }
 
         .stat-label {
-          font-size: 0.9rem;
+          font-size: clamp(0.7rem, 2vw, 0.9rem);
           color: #AAAAAA;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -236,31 +249,32 @@ const AboutSection = () => {
         }
 
         .quote-section {
-          margin-top: 2.5rem;
-          padding: 2rem;
+          margin-top: 2rem;
+          padding: 1.5rem;
           background: rgba(30, 30, 30, 0.7);
           border-radius: 8px;
           border-left: 4px solid #7C3AED;
           position: relative;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          width: 100%;
         }
 
         .quote {
-          font-size: 1.1rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           font-style: italic;
           color: #FFFFFF;
           line-height: 1.7;
           margin: 0;
           position: relative;
-          padding: 0 1rem;
+          padding: 0 0.5rem;
         }
 
         .quote::before {
           content: '"';
           position: absolute;
-          top: -1rem;
-          left: -1rem;
-          font-size: 2.5rem;
+          top: -0.75rem;
+          left: -0.5rem;
+          font-size: 2rem;
           color: rgba(168, 85, 247, 0.15);
           font-family: serif;
           line-height: 1;
@@ -272,16 +286,15 @@ const AboutSection = () => {
           text-align: right;
           color: #A855F7;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: clamp(0.85rem, 2.5vw, 1rem);
         }
 
-        /* Section divider style */
         .section-divider {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%) rotate(45deg);
-          width: 150px;
+          width: 100px;
           height: 2px;
           background: repeating-linear-gradient(
             to right,
@@ -294,26 +307,85 @@ const AboutSection = () => {
           z-index: 0;
         }
 
-        @media (max-width: 768px) {
+        /* Tablet Responsive */
+        @media (max-width: 1024px) {
           .about-container {
             grid-template-columns: 1fr;
             gap: 2rem;
+            padding: 0 1.5rem;
           }
 
           .about-stats {
             grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+
+          .stat-item {
+            padding: 1rem 0.5rem;
+          }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+          .about-section {
+            padding: 4rem 0;
+          }
+
+          .about-container {
+            gap: 1.75rem;
+            padding: 0 1.25rem;
           }
 
           .about-highlights {
             grid-template-columns: 1fr;
+            gap: 0.5rem;
+          }
+
+          .highlight-item {
+            padding: 0.6rem;
           }
 
           .quote-section {
-            padding: 1.5rem;
+            padding: 1.25rem;
           }
 
           .quote {
-            font-size: 1rem;
+            font-size: 0.95rem;
+          }
+
+          .about-stats {
+            gap: 0.5rem;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .about-section {
+            padding: 3rem 0;
+          }
+
+          .about-container {
+            padding: 0 1rem;
+          }
+
+          .about-image-content {
+            padding: 1.5rem 1rem;
+          }
+
+          .about-highlights {
+            gap: 0.4rem;
+          }
+
+          .highlight-text {
+            font-size: 0.85rem;
+          }
+
+          .stat-item {
+            padding: 0.75rem 0.4rem;
+          }
+
+          .quote-section {
+            padding: 1rem;
           }
         }
       `}</style>

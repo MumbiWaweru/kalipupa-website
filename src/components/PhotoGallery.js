@@ -7,7 +7,6 @@ const PhotoGallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Actual photo data from the photos folder
   const photos = [
     { id: 1, title: 'Artist Portrait', category: 'artist', description: 'Official artist portrait', icon: <FiCamera />, src: '/photos/artist/artist1.jpeg' },
     { id: 2, title: 'Artist Photo', category: 'artist', description: 'Professional artist photo', icon: <FiCamera />, src: '/photos/artist/artist2.jpeg' },
@@ -30,7 +29,6 @@ const PhotoGallery = () => {
     } else {
       setFilteredPhotos(photos.filter(photo => photo.category === selectedCategory));
     }
-    // Reset lightbox if current image is not in filtered photos
     if (currentImage >= filteredPhotos.length && filteredPhotos.length > 0) {
       setCurrentImage(0);
     }
@@ -59,21 +57,24 @@ const PhotoGallery = () => {
       <style jsx>{`
         .gallery-section {
           position: relative;
-          padding: 6rem 0;
+          padding: 5rem 0;
           background: #0F0F0F;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 4rem;
+          margin-bottom: 2.5rem;
           position: relative;
-          padding-bottom: 2rem;
+          padding-bottom: 1.5rem;
         }
 
         .section-header h2 {
-          font-size: clamp(2.5rem, 5vw, 3rem);
+          font-size: clamp(1.75rem, 5vw, 2.5rem);
           color: #FFFFFF;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           position: relative;
           font-weight: 800;
         }
@@ -81,17 +82,17 @@ const PhotoGallery = () => {
         .section-header h2::after {
           content: '';
           position: absolute;
-          bottom: -12px;
+          bottom: -10px;
           left: 50%;
           transform: translateX(-50%);
-          width: 100px;
-          height: 5px;
+          width: 60px;
+          height: 3px;
           background: linear-gradient(90deg, #FFD700, #FFEC8B, #D4AF37);
-          border-radius: 3px;
+          border-radius: 2px;
         }
 
         .section-header p {
-          font-size: 1.2rem;
+          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
           color: #CCCCCC;
           margin-top: 0.5rem;
         }
@@ -99,22 +100,25 @@ const PhotoGallery = () => {
         .category-filters {
           display: flex;
           justify-content: center;
-          gap: 1rem;
-          margin-bottom: 3rem;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
           flex-wrap: wrap;
+          width: 100%;
         }
 
         .category-btn {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          padding: 0.8rem 1.5rem;
+          gap: 0.4rem;
+          padding: 0.6rem 1rem;
           background: rgba(30, 30, 30, 0.7);
           border: 1px solid rgba(255, 215, 0, 0.1);
           border-radius: 8px;
           color: #CCCCCC;
           cursor: pointer;
           transition: all 0.3s ease;
+          font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+          white-space: nowrap;
         }
 
         .category-btn.active {
@@ -130,13 +134,14 @@ const PhotoGallery = () => {
 
         .gallery-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 2rem;
-          margin-bottom: 3rem;
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          gap: 1.5rem;
+          margin-bottom: 2rem;
+          width: 100%;
         }
 
         .gallery-item {
-          height: 280px;
+          height: 240px;
           background: rgba(30, 30, 30, 0.9);
           border: 1px solid rgba(255, 215, 0, 0.1);
           border-radius: 16px;
@@ -177,10 +182,10 @@ const PhotoGallery = () => {
 
         .image-container {
           width: 100%;
-          height: 180px;
+          height: 140px;
           overflow: hidden;
           border-radius: 8px;
-          margin-bottom: 0.8rem;
+          margin-bottom: 0.75rem;
           position: relative;
         }
 
@@ -195,9 +200,19 @@ const PhotoGallery = () => {
           transform: scale(1.1);
         }
 
+        .image-icon {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          color: #FFD700;
+          font-size: 3rem;
+        }
+
         .image-title {
-          font-size: 1.1rem;
-          margin-bottom: 0.3rem;
+          font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+          margin-bottom: 0.25rem;
           color: #FFFFFF;
           position: relative;
           z-index: 2;
@@ -205,25 +220,18 @@ const PhotoGallery = () => {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          width: 100%;
         }
 
         .image-category {
-          font-size: 0.8rem;
+          font-size: clamp(0.7rem, 2vw, 0.8rem);
           color: #FFD700;
           text-transform: uppercase;
           letter-spacing: 1px;
           position: relative;
           z-index: 2;
-          margin-bottom: 0.3rem;
+          margin-bottom: 0.25rem;
           font-weight: 600;
-        }
-
-        .image-description {
-          font-size: 0.8rem;
-          color: #CCCCCC;
-          position: relative;
-          z-index: 2;
-          display: none;
         }
 
         .lightbox {
@@ -248,17 +256,19 @@ const PhotoGallery = () => {
           width: 90%;
           position: relative;
           text-align: center;
+          padding: 1rem;
         }
 
         .lightbox-image {
-          height: 500px;
+          min-height: 300px;
+          max-height: 60vh;
           background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 236, 139, 0.1) 100%);
           border-radius: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
           position: relative;
           overflow: hidden;
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
@@ -279,32 +289,34 @@ const PhotoGallery = () => {
           width: 100%;
           height: 100%;
           object-fit: contain;
+          max-width: 100%;
         }
 
         .lightbox-icon {
-          font-size: 6rem;
+          font-size: clamp(4rem, 10vw, 6rem);
           margin-bottom: 1.5rem;
           color: #FFD700;
           animation: float 3s ease-in-out infinite;
         }
 
         .lightbox-title {
-          font-size: 2.4rem;
+          font-size: clamp(1.5rem, 5vw, 2.4rem);
           margin-bottom: 0.5rem;
           color: #FFFFFF;
           text-align: center;
           position: relative;
           z-index: 2;
           font-weight: 800;
+          word-wrap: break-word;
         }
 
         .lightbox-title::after {
           content: '';
           display: block;
-          width: 70px;
-          height: 4px;
+          width: 50px;
+          height: 3px;
           background: linear-gradient(90deg, #FFD700, #FFEC8B, #D4AF37);
-          margin: 1rem auto;
+          margin: 0.75rem auto;
           border-radius: 2px;
         }
 
@@ -316,7 +328,7 @@ const PhotoGallery = () => {
           margin: 0 auto;
           position: relative;
           z-index: 2;
-          font-size: 1.1rem;
+          font-size: clamp(0.9rem, 2.5vw, 1.1rem);
         }
 
         .lightbox-nav {
@@ -326,25 +338,26 @@ const PhotoGallery = () => {
           width: 100%;
           display: flex;
           justify-content: space-between;
-          padding: 0 2rem;
+          padding: 0 1rem;
           pointer-events: none;
         }
 
         .lightbox-btn {
           background: rgba(30, 30, 30, 0.9);
           border: 1px solid rgba(255, 215, 0, 0.3);
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           color: #FFD700;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           transition: all 0.3s ease;
           pointer-events: all;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          flex-shrink: 0;
         }
 
         .lightbox-btn:hover {
@@ -356,19 +369,19 @@ const PhotoGallery = () => {
 
         .lightbox-close {
           position: absolute;
-          top: -60px;
+          top: -55px;
           right: 0;
           background: rgba(30, 30, 30, 0.9);
           border: 1px solid rgba(255, 215, 0, 0.3);
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           color: #FFD700;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
           transition: all 0.3s ease;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -386,33 +399,127 @@ const PhotoGallery = () => {
           100% { transform: translateY(0px); }
         }
 
-        @media (max-width: 768px) {
+        /* Tablet Responsive */
+        @media (max-width: 1024px) {
           .gallery-grid {
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.25rem;
           }
 
           .gallery-item {
-            height: 240px;
+            height: 220px;
+          }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+          .gallery-section {
+            padding: 4rem 0;
+          }
+
+          .gallery-grid {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1rem;
+          }
+
+          .gallery-item {
+            height: 200px;
+            padding: 0.75rem;
+          }
+
+          .image-container {
+            height: 110px;
           }
 
           .lightbox-image {
-            height: 350px;
+            max-height: 50vh;
           }
 
           .lightbox-nav {
-            padding: 0 1rem;
+            padding: 0 0.5rem;
           }
 
           .lightbox-close {
             top: -50px;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
           }
 
-          .lightbox-icon {
-            font-size: 4rem;
+          .lightbox-btn {
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+          }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+          .gallery-section {
+            padding: 3rem 0;
+          }
+
+          .category-filters {
+            gap: 0.4rem;
+          }
+
+          .category-btn {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+          }
+
+          .gallery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+
+          .gallery-item {
+            height: 160px;
+            padding: 0.5rem;
+            border-radius: 12px;
+          }
+
+          .image-container {
+            height: 90px;
+            margin-bottom: 0.5rem;
+          }
+
+          .image-title {
+            font-size: 0.8rem;
+          }
+
+          .image-category {
+            font-size: 0.65rem;
+          }
+
+          .lightbox-content {
+            width: 95%;
+            padding: 0.5rem;
+          }
+
+          .lightbox-image {
+            min-height: 200px;
+            max-height: 45vh;
+            border-radius: 12px;
           }
 
           .lightbox-title {
-            font-size: 2rem;
+            font-size: 1.25rem;
+          }
+
+          .lightbox-description {
+            font-size: 0.85rem;
+          }
+
+          .lightbox-close {
+            top: -45px;
+            width: 40px;
+            height: 40px;
+          }
+
+          .lightbox-btn {
+            width: 40px;
+            height: 40px;
           }
         }
       `}</style>
@@ -442,12 +549,15 @@ const PhotoGallery = () => {
                 key={photo.id}
                 className="gallery-item"
                 onClick={() => openLightbox(index)}
+                role="button"
+                tabIndex={0}
               >
                 <div className="image-container">
-                  <img 
-                    src={photo.src} 
-                    alt={photo.title} 
+                  <img
+                    src={photo.src}
+                    alt={photo.title}
                     className="gallery-image"
+                    loading="lazy"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -467,9 +577,9 @@ const PhotoGallery = () => {
             <div className="lightbox">
               <div className="lightbox-content">
                 <div className="lightbox-image">
-                  <img 
-                    src={filteredPhotos[currentImage]?.src} 
-                    alt={filteredPhotos[currentImage]?.title} 
+                  <img
+                    src={filteredPhotos[currentImage]?.src}
+                    alt={filteredPhotos[currentImage]?.title}
                     className="lightbox-img"
                     onError={(e) => {
                       e.target.style.display = 'none';
@@ -485,15 +595,15 @@ const PhotoGallery = () => {
                 <p className="lightbox-description">{filteredPhotos[currentImage]?.description}</p>
 
                 <div className="lightbox-nav">
-                  <button className="lightbox-btn" onClick={prevImage}>
+                  <button className="lightbox-btn" onClick={prevImage} aria-label="Previous image">
                     <FiChevronLeft />
                   </button>
-                  <button className="lightbox-btn" onClick={nextImage}>
+                  <button className="lightbox-btn" onClick={nextImage} aria-label="Next image">
                     <FiChevronRight />
                   </button>
                 </div>
 
-                <button className="lightbox-close" onClick={closeLightbox}>
+                <button className="lightbox-close" onClick={closeLightbox} aria-label="Close lightbox">
                   <FiX />
                 </button>
               </div>

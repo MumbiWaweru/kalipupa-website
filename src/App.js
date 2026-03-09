@@ -19,23 +19,33 @@ function App() {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
+    
+    // Prevent horizontal scroll
     preventHorizontalScroll();
+    
+    // Set mobile viewport height
     setVhVariable();
+    
+    // Add mobile viewport fix class
+    document.documentElement.classList.add('mobile-optimized');
+    
     window.addEventListener('resize', setVhVariable);
     return () => window.removeEventListener('resize', setVhVariable);
   }, []);
 
   return (
-    <div className="App">
+    <>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <MusicSection />
-      <CollaborationsSection />
-      <PhotoGallery />
-      <ContactSection />
+      <main id="main-content">
+        <HeroSection />
+        <AboutSection />
+        <MusicSection />
+        <CollaborationsSection />
+        <PhotoGallery />
+        <ContactSection />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

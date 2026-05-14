@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiInstagram, FiYoutube, FiTwitter } from 'react-icons/fi';
+import { FiMenu, FiX, FiInstagram, FiYoutube } from 'react-icons/fi';
 import { FaSpotify, FaSoundcloud } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
         <div className="container nav-container">
           <a href="#home" className="logo">
-            KALIPUPA
+            <span style={{ color: 'var(--primary-color)' }}>◆</span> KALI<span style={{ color: 'var(--primary-color)' }}>PUPA</span>
           </a>
 
           <div className="nav-links">
@@ -209,82 +209,6 @@ const Navbar = () => {
           }
         }
       `}</style>
-    </>
-  );
-};
-
-export default Navbar;
-
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="logo" onClick={() => scrollToSection('home')}>
-            KALIPUPA
-            <span className="logo-tag">Nairobi Hip Hop</span>
-          </div>
-
-          <div className="nav-menu">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="nav-social-links">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                className={`nav-social-link ${link.label.toLowerCase()}`}
-                aria-label={link.label}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-
-          <button
-            className="menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </div>
-
-        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              className="mobile-nav-item"
-              onClick={() => scrollToSection(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
-
-          <div className="mobile-social-links">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                className={`nav-social-link ${link.label.toLowerCase()}`}
-                aria-label={link.label}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
     </>
   );
 };

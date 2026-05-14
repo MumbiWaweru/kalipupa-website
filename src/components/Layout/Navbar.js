@@ -59,7 +59,7 @@ const Navbar = () => {
 
       <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`} style={{
         position: 'fixed', top: 0, right: 0, width: '100%', height: '100vh',
-        background: 'var(--bg-color)', z-index: 999, display: isMenuOpen ? 'flex' : 'none',
+        background: 'var(--bg-color)', zIndex: 999, display: isMenuOpen ? 'flex' : 'none',
         flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
         transition: 'var(--transition)'
       }}>

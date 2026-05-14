@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiExternalLink, FiMusic } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
 
 const MusicSection = () => {
   const projects = [

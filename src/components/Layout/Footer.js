@@ -13,21 +13,21 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container footer-content">
-        <h2 className="footer-logo">
-          <span style={{ color: 'var(--primary-color)', fontSize: '1.2em' }}>◆</span> 
-          KALI<span style={{ color: 'var(--primary-color)' }}>PUPA</span>
-        </h2>
+        <div className="logo">
+          <span className="logo-symbol">◆</span> 
+          <span className="logo-text">KALI<span className="gold">PUPA</span></span>
+        </div>
         
-        <div style={{ display: 'flex', gap: '2rem' }}>
+        <div className="footer-socials">
           {socialLinks.map((social, index) => (
-            <a key={index} href={social.url} target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', transition: 'var(--transition)' }}>
+            <a key={index} href={social.url} target="_blank" rel="noreferrer" className="footer-icon">
               {social.icon}
             </a>
           ))}
         </div>
         
-        <p style={{ fontFamily: 'Bebas Neue', letterSpacing: '0.1em', fontSize: '0.9rem', color: 'var(--text-dim)' }}>
-          © {new Date().getFullYear()} KALIPUPA. ALL RIGHTS RESERVED.
+        <p className="copyright">
+          © {new Date().getFullYear()} KALIPUPA. ARCHIVING THE NAIROBI SOUND.
         </p>
       </div>
     </footer>

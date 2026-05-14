@@ -69,9 +69,9 @@ const Navbar = () => {
           <div className="overlay-footer">
             <p>Nairobi, Kenya • All-Rounded Creative</p>
             <div className="nav-socials">
-              <a href="#" className="social-icon"><FaSpotify /></a>
-              <a href="#" className="social-icon"><FaSoundcloud /></a>
-              <a href="#" className="social-icon"><FiInstagram /></a>
+              <a href="https://open.spotify.com/artist/kalipupa" target="_blank" rel="noreferrer" className="social-icon"><FaSpotify /></a>
+              <a href="https://soundcloud.com/user-727292764" target="_blank" rel="noreferrer" className="social-icon"><FaSoundcloud /></a>
+              <a href="https://instagram.com/kalipupa_ke" target="_blank" rel="noreferrer" className="social-icon"><FiInstagram /></a>
             </div>
           </div>
         </div>

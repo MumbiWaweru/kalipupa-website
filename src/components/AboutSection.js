@@ -19,9 +19,7 @@ const AboutSection = () => {
             </p>
             <p>
               His music is a reflection of the vibrant energy of Nairobi, 
-              blending contemporary HipHop with deep-rooted African rhythms. 
-              It's more than just music; it's a narrative of urban life, 
-              struggle, and triumph.
+              blending contemporary HipHop with deep-rooted African rhythms.
             </p>
           </div>
           
@@ -42,132 +40,14 @@ const AboutSection = () => {
             <img src="/photos/artist/artist2.jpeg" alt="Kalipupa Session" className="about-image" />
             <div className="image-accent"></div>
           </div>
-          <div className="quote-box">
-            <p className="quote-text">
+          <div className="quote-box" style={{ paddingLeft: '2rem', borderLeft: '3px solid var(--primary-color)' }}>
+            <p className="quote-text" style={{ fontFamily: 'Playfair Display', fontSize: '1.4rem', fontStyle: 'italic', marginBottom: '1rem' }}>
               "HipHop is the open path to expressing my outright emotions."
             </p>
-            <span className="quote-author">— KALIPUPA</span>
+            <span className="quote-author" style={{ fontFamily: 'Bebas Neue', color: 'var(--primary-color)' }}>— KALIPUPA</span>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .about {
-          background-color: var(--surface-color);
-        }
-
-        .about-grid {
-          display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 6rem;
-          align-items: center;
-        }
-
-        .section-title {
-          margin-bottom: 3rem;
-        }
-
-        .bio-lead {
-          font-family: 'Playfair Display', serif;
-          font-style: italic;
-          font-size: 1.8rem;
-          color: var(--text-primary);
-          margin-bottom: 2rem;
-          line-height: 1.4;
-        }
-
-        .bio-main {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-          margin-bottom: 3rem;
-        }
-
-        .highlights-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-        }
-
-        .highlight-title {
-          font-family: 'Bebas Neue', cursive;
-          color: var(--accent-color);
-          font-size: 1.4rem;
-          display: block;
-          margin-bottom: 0.5rem;
-          letter-spacing: 0.05em;
-        }
-
-        .about-visual {
-          position: relative;
-        }
-
-        .image-card {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 1/1;
-          margin-bottom: 4rem;
-        }
-
-        .about-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          position: relative;
-          z-index: 2;
-          filter: grayscale(100%);
-          transition: var(--transition);
-        }
-
-        .image-card:hover .about-image {
-          filter: grayscale(0%);
-        }
-
-        .image-accent {
-          position: absolute;
-          top: 2rem;
-          left: 2rem;
-          width: 100%;
-          height: 100%;
-          border: 2px solid var(--accent-color);
-          z-index: 1;
-        }
-
-        .quote-box {
-          padding-left: 2rem;
-          border-left: 3px solid var(--primary-color);
-        }
-
-        .quote-text {
-          font-family: 'Playfair Display', serif;
-          font-size: 1.4rem;
-          color: var(--text-primary);
-          margin-bottom: 1rem;
-        }
-
-        .quote-author {
-          font-family: 'Bebas Neue', cursive;
-          color: var(--primary-color);
-          letter-spacing: 0.1em;
-        }
-
-        @media (max-width: 1024px) {
-          .about-grid {
-            grid-template-columns: 1fr;
-            gap: 4rem;
-          }
-          
-          .about-visual {
-            order: -1;
-            max-width: 500px;
-            margin: 0 auto;
-          }
-
-          .highlights-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </section>
   );
 };

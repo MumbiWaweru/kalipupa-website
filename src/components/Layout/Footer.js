@@ -14,65 +14,22 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-content">
         <h2 className="footer-logo">
-          <span style={{ color: 'var(--primary-color)' }}>◆</span> KALI<span style={{ color: 'var(--primary-color)' }}>PUPA</span>
+          <span style={{ color: 'var(--primary-color)', fontSize: '1.2em' }}>◆</span> 
+          KALI<span style={{ color: 'var(--primary-color)' }}>PUPA</span>
         </h2>
         
-        <div className="footer-socials">
+        <div style={{ display: 'flex', gap: '2rem' }}>
           {socialLinks.map((social, index) => (
-            <a key={index} href={social.url} target="_blank" rel="noreferrer" className="footer-icon">
+            <a key={index} href={social.url} target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', fontSize: '1.5rem', transition: 'var(--transition)' }}>
               {social.icon}
             </a>
           ))}
         </div>
         
-        <p className="copyright">
+        <p style={{ fontFamily: 'Bebas Neue', letterSpacing: '0.1em', fontSize: '0.9rem', color: 'var(--text-dim)' }}>
           © {new Date().getFullYear()} KALIPUPA. ALL RIGHTS RESERVED.
         </p>
       </div>
-
-      <style jsx>{`
-        .footer {
-          padding: 6rem 0;
-          background-color: var(--bg-color);
-          border-top: 1px solid rgba(197, 160, 89, 0.05);
-        }
-
-        .footer-content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 3rem;
-        }
-
-        .footer-logo {
-          font-size: 2.5rem;
-          color: var(--text-primary);
-          letter-spacing: 0.2em;
-        }
-
-        .footer-socials {
-          display: flex;
-          gap: 2rem;
-        }
-
-        .footer-icon {
-          color: var(--text-secondary);
-          font-size: 1.5rem;
-          transition: var(--transition);
-        }
-
-        .footer-icon:hover {
-          color: var(--primary-color);
-          transform: translateY(-3px);
-        }
-
-        .copyright {
-          font-family: 'Bebas Neue', cursive;
-          letter-spacing: 0.1em;
-          font-size: 0.9rem;
-          color: var(--text-dim);
-        }
-      `}</style>
     </footer>
   );
 };

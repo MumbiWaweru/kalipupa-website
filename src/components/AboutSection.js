@@ -1,394 +1,178 @@
-// src/components/AboutSection.js - NAIROBI HIPHOP ARTIST ABOUT SECTION
 import React from 'react';
-import { FiMusic, FiMic, FiGlobe, FiAward, FiHeart, FiMapPin, FiUsers, FiHeadphones } from 'react-icons/fi';
 
 const AboutSection = () => {
-  const achievements = [
-    { icon: <FiAward />, count: '5+', label: 'Years Experience' },
-    { icon: <FiMusic />, count: '28+', label: 'Songs Released' },
-    { icon: <FiGlobe />, count: '8+', label: 'Countries Reached' },
-    { icon: <FiHeadphones />, count: '1.5M+', label: 'Streams' },
-  ];
-
-  const highlights = [
-    { icon: <FiHeart />, text: 'Authentic Storytelling' },
-    { icon: <FiMusic />, text: 'Contemporary Sounds' },
-    { icon: <FiGlobe />, text: 'Cultural Fusion' },
-    { icon: <FiMapPin />, text: 'Nairobi Born & Raised' },
-    { icon: <FiUsers />, text: 'Community Focused' },
-    { icon: <FiAward />, text: 'Award Winning' },
-  ];
-
   return (
-    <>
+    <section id="about" className="about">
+      <div className="container about-grid">
+        <div className="about-content">
+          <h2 className="section-title">The Sound of Nairobi</h2>
+          <p className="bio-lead">
+            A Nairobi native, Kalipupa is an all-rounded creative who loves 
+            music, art, and life.
+          </p>
+          <div className="bio-main">
+            <p>
+              Since childhood, he has grown up around traditional African sounds, 
+              with HipHop as an open path to expressing his outright emotions. 
+              He began rapping early in his teens with the release of his first 
+              mixtape "Only Easy Day_Jana" in 2017.
+            </p>
+            <p>
+              His music is a reflection of the vibrant energy of Nairobi, 
+              blending contemporary HipHop with deep-rooted African rhythms. 
+              It's more than just music; it's a narrative of urban life, 
+              struggle, and triumph.
+            </p>
+          </div>
+          
+          <div className="highlights-grid">
+            <div className="highlight">
+              <span className="highlight-title">Cultural Fusion</span>
+              <p>Blending traditional Kenyan sounds with modern HipHop production.</p>
+            </div>
+            <div className="highlight">
+              <span className="highlight-title">Authentic Stories</span>
+              <p>Raw, honest lyrics that speak to the heart of the city.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="about-visual">
+          <div className="image-card">
+            <img src="/photos/artist/artist2.jpeg" alt="Kalipupa Session" className="about-image" />
+            <div className="image-accent"></div>
+          </div>
+          <div className="quote-box">
+            <p className="quote-text">
+              "HipHop is the open path to expressing my outright emotions."
+            </p>
+            <span className="quote-author">— KALIPUPA</span>
+          </div>
+        </div>
+      </div>
+
       <style jsx>{`
-        .about-section {
-          position: relative;
-          padding: 5rem 0;
-          background: #0F0F0F;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          max-width: 100%;
-          overflow-x: hidden;
+        .about {
+          background-color: var(--surface-color);
         }
 
-        .about-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 2rem;
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1.2fr 1fr;
+          gap: 6rem;
+          align-items: center;
+        }
+
+        .section-title {
+          margin-bottom: 3rem;
+        }
+
+        .bio-lead {
+          font-family: 'Playfair Display', serif;
+          font-style: italic;
+          font-size: 1.8rem;
+          color: var(--text-primary);
+          margin-bottom: 2rem;
+          line-height: 1.4;
+        }
+
+        .bio-main {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .highlights-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 3rem;
-          align-items: center;
-          justify-content: center;
+          gap: 2rem;
+        }
+
+        .highlight-title {
+          font-family: 'Bebas Neue', cursive;
+          color: var(--accent-color);
+          font-size: 1.4rem;
+          display: block;
+          margin-bottom: 0.5rem;
+          letter-spacing: 0.05em;
+        }
+
+        .about-visual {
+          position: relative;
+        }
+
+        .image-card {
+          position: relative;
           width: 100%;
+          aspect-ratio: 1/1;
+          margin-bottom: 4rem;
         }
 
         .about-image {
-          position: relative;
-          border-radius: 12px;
-          overflow: hidden;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 60px rgba(124, 58, 237, 0.15);
-          transition: transform 0.4s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           width: 100%;
-        }
-
-        .about-image:hover {
-          transform: translateY(-5px);
-        }
-
-        .about-image-content {
+          height: 100%;
+          object-fit: cover;
           position: relative;
-          padding: 2.5rem 2rem;
-          background: rgba(30, 30, 30, 0.9);
-          border-radius: 12px;
-          text-align: center;
-          border: 1px solid rgba(124, 58, 237, 0.3);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
+          z-index: 2;
+          filter: grayscale(100%);
+          transition: var(--transition);
         }
 
-        .about-image-icon {
-          font-size: clamp(3rem, 6vw, 4rem);
-          color: #A855F7;
+        .image-card:hover .about-image {
+          filter: grayscale(0%);
+        }
+
+        .image-accent {
+          position: absolute;
+          top: 2rem;
+          left: 2rem;
+          width: 100%;
+          height: 100%;
+          border: 2px solid var(--accent-color);
+          z-index: 1;
+        }
+
+        .quote-box {
+          padding-left: 2rem;
+          border-left: 3px solid var(--primary-color);
+        }
+
+        .quote-text {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.4rem;
+          color: var(--text-primary);
           margin-bottom: 1rem;
-          transition: transform 0.3s ease;
-        }
-
-        .about-image:hover .about-image-icon {
-          transform: scale(1.05);
-        }
-
-        .about-image-title {
-          font-size: clamp(1.25rem, 3vw, 1.5rem);
-          color: #FFFFFF;
-          margin-bottom: 0.5rem;
-          font-weight: 700;
-        }
-
-        .about-image-subtitle {
-          color: #A855F7;
-          font-size: clamp(0.85rem, 2vw, 1rem);
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          font-weight: 600;
-        }
-
-        .about-content {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 100%;
-        }
-
-        .section-subtitle {
-          font-size: clamp(0.85rem, 2.5vw, 1rem);
-          color: #A855F7;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          margin-bottom: 0.75rem;
-          position: relative;
-          display: inline-block;
-          font-weight: 600;
-        }
-
-        .section-subtitle::after {
-          content: '';
-          position: absolute;
-          bottom: -6px;
-          left: 0;
-          width: 40px;
-          height: 2px;
-          background: linear-gradient(90deg, #7C3AED, #A855F7);
-          border-radius: 2px;
-        }
-
-        .about-title {
-          font-size: clamp(1.5rem, 5vw, 2.5rem);
-          color: #FFFFFF;
-          margin-bottom: 1.25rem;
-          position: relative;
-          font-weight: 800;
-          word-wrap: break-word;
-        }
-
-        .about-title::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 60px;
-          height: 3px;
-          background: linear-gradient(90deg, #7C3AED, #A855F7);
-          border-radius: 2px;
-        }
-
-        .about-description {
-          color: #CCCCCC;
-          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-
-        .about-highlights {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.75rem;
-          margin-bottom: 1.5rem;
-          width: 100%;
-        }
-
-        .highlight-item {
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          padding: 0.75rem;
-          background: rgba(30, 30, 30, 0.7);
-          border-radius: 8px;
-          border: 1px solid rgba(124, 58, 237, 0.2);
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .highlight-item:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
-          border-color: rgba(124, 58, 237, 0.5);
-          background: rgba(40, 40, 40, 0.8);
-        }
-
-        .highlight-icon {
-          font-size: clamp(1.25rem, 3vw, 1.5rem);
-          color: #A855F7;
-          min-width: 1.5rem;
-          flex-shrink: 0;
-        }
-
-        .highlight-text {
-          color: #FFFFFF;
-          font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-          font-weight: 500;
-          word-wrap: break-word;
-        }
-
-        .about-stats {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1rem;
-          margin-top: 2.5rem;
-          width: 100%;
-          max-width: 100%;
-        }
-
-        .stat-item {
-          text-align: center;
-          padding: 1.25rem 0.75rem;
-          background: rgba(30, 30, 30, 0.7);
-          border-radius: 8px;
-          border: 1px solid rgba(124, 58, 237, 0.2);
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .stat-item:hover {
-          transform: translateY(-5px);
-          border-color: rgba(124, 58, 237, 0.5);
-          box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
-          background: rgba(40, 40, 40, 0.8);
-        }
-
-        .stat-icon {
-          font-size: clamp(1.5rem, 3vw, 1.8rem);
-          color: #A855F7;
-          margin-bottom: 0.5rem;
-        }
-
-        .stat-count {
-          font-size: clamp(1.5rem, 4vw, 1.8rem);
-          font-weight: 800;
-          margin-bottom: 0.25rem;
-          color: #A855F7;
-        }
-
-        .stat-label {
-          font-size: clamp(0.7rem, 2vw, 0.9rem);
-          color: #AAAAAA;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-weight: 600;
-        }
-
-        .quote-section {
-          margin-top: 2rem;
-          padding: 1.5rem;
-          background: rgba(30, 30, 30, 0.7);
-          border-radius: 8px;
-          border-left: 4px solid #7C3AED;
-          position: relative;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-          width: 100%;
-        }
-
-        .quote {
-          font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-          font-style: italic;
-          color: #FFFFFF;
-          line-height: 1.7;
-          margin: 0;
-          position: relative;
-          padding: 0 0.5rem;
-        }
-
-        .quote::before {
-          content: '"';
-          position: absolute;
-          top: -0.75rem;
-          left: -0.5rem;
-          font-size: 2rem;
-          color: rgba(168, 85, 247, 0.15);
-          font-family: serif;
-          line-height: 1;
         }
 
         .quote-author {
-          display: block;
-          margin-top: 1rem;
-          text-align: right;
-          color: #A855F7;
-          font-weight: 600;
-          font-size: clamp(0.85rem, 2.5vw, 1rem);
+          font-family: 'Bebas Neue', cursive;
+          color: var(--primary-color);
+          letter-spacing: 0.1em;
         }
 
-        .section-divider {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(45deg);
-          width: 100px;
-          height: 2px;
-          background: repeating-linear-gradient(
-            to right,
-            #7C3AED 0,
-            #7C3AED 8px,
-            transparent 8px,
-            transparent 16px
-          );
-          opacity: 0.2;
-          z-index: 0;
-        }
-
-        /* Tablet Responsive */
         @media (max-width: 1024px) {
-          .about-container {
+          .about-grid {
             grid-template-columns: 1fr;
-            gap: 2rem;
-            padding: 0 1.5rem;
+            gap: 4rem;
+          }
+          
+          .about-visual {
+            order: -1;
+            max-width: 500px;
+            margin: 0 auto;
           }
 
-          .about-stats {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.75rem;
-          }
-
-          .stat-item {
-            padding: 1rem 0.5rem;
-          }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          .about-section {
-            padding: 4rem 0;
-          }
-
-          .about-container {
-            gap: 1.75rem;
-            padding: 0 1.25rem;
-          }
-
-          .about-highlights {
+          .highlights-grid {
             grid-template-columns: 1fr;
-            gap: 0.5rem;
-          }
-
-          .highlight-item {
-            padding: 0.6rem;
-          }
-
-          .quote-section {
-            padding: 1.25rem;
-          }
-
-          .quote {
-            font-size: 0.95rem;
-          }
-
-          .about-stats {
-            gap: 0.5rem;
-          }
-        }
-
-        /* Small Mobile */
-        @media (max-width: 480px) {
-          .about-section {
-            padding: 3rem 0;
-          }
-
-          .about-container {
-            padding: 0 1rem;
-          }
-
-          .about-image-content {
-            padding: 1.5rem 1rem;
-          }
-
-          .about-highlights {
-            gap: 0.4rem;
-          }
-
-          .highlight-text {
-            font-size: 0.85rem;
-          }
-
-          .stat-item {
-            padding: 0.75rem 0.4rem;
-          }
-
-          .quote-section {
-            padding: 1rem;
           }
         }
       `}</style>
+    </section>
+  );
+};
+
+export default AboutSection;
 
       <section id="about" className="about-section">
         <div className="section-divider"></div>

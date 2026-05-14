@@ -1,416 +1,81 @@
-// src/components/Layout/Footer.js - NAIROBI HIPHOP ARTIST FOOTER
 import React from 'react';
-import { FiHeart, FiInstagram, FiYoutube, FiMail as FiEnvelope, FiMapPin, FiPhone, FiClock, FiAward } from 'react-icons/fi';
-import { FaSpotify, FaSoundcloud, FaTiktok, FaFacebookF } from 'react-icons/fa';
+import { FiInstagram, FiYoutube } from 'react-icons/fi';
+import { FaSpotify, FaSoundcloud } from 'react-icons/fa';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   const socialLinks = [
-    { icon: <FiInstagram />, url: 'https://www.instagram.com/nurahkalipupa?igsh=OGZkcHU0M2w5Y3k5', label: 'Instagram' },
-    { icon: <FaFacebookF />, url: 'https://www.facebook.com/share/17zkF76QGE/', label: 'Facebook' },
-    { icon: <FiYoutube />, url: 'https://youtube.com/@kalipupa2324?si=gkjrNwnSKihw3oij', label: 'YouTube' },
-    { icon: <FaTiktok />, url: 'https://www.tiktok.com/@kalipupa?_r=1&_t=ZS-935xFgX0kTv', label: 'TikTok' },
-    { icon: <FaSpotify />, url: 'https://open.spotify.com/artist/kalipupa', label: 'Spotify' },
-    { icon: <FaSoundcloud />, url: 'https://soundcloud.com/user-727292764', label: 'SoundCloud' },
-  ];
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const links = [
-    { name: 'Home', action: () => scrollToSection('home') },
-    { name: 'About', action: () => scrollToSection('about') },
-    { name: 'Music', action: () => scrollToSection('music') },
-    { name: 'Gallery', action: () => scrollToSection('gallery') },
-    { name: 'Contact', action: () => scrollToSection('contact') },
-  ];
-
-  const quickLinks = [
-    { name: 'Press Kit', action: () => {} },
-    { name: 'Merchandise', action: () => {} },
-    { name: 'Booking', action: () => {} },
-    { name: 'Management', action: () => {} },
+    { icon: <FaSpotify />, url: 'https://open.spotify.com/artist/kalipupa' },
+    { icon: <FaSoundcloud />, url: 'https://soundcloud.com/user-727292764' },
+    { icon: <FiInstagram />, url: 'https://instagram.com/kalipupa_ke' },
+    { icon: <FiYoutube />, url: 'https://youtube.com/@Kalipupa13' },
   ];
 
   return (
-    <>
+    <footer className="footer">
+      <div className="container footer-content">
+        <h2 className="footer-logo">KALIPUPA</h2>
+        
+        <div className="footer-socials">
+          {socialLinks.map((social, index) => (
+            <a key={index} href={social.url} target="_blank" rel="noreferrer" className="footer-icon">
+              {social.icon}
+            </a>
+          ))}
+        </div>
+        
+        <p className="copyright">
+          © {new Date().getFullYear()} KALIPUPA. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+
       <style jsx>{`
         .footer {
-          background: #0F0F0F;
-          border-top: 1px solid rgba(124, 58, 237, 0.2);
-          padding: 4rem 0 2rem;
-          position: relative;
-          overflow: hidden;
-          width: 100%;
-          max-width: 100%;
-        }
-
-        .footer::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
+          padding: 6rem 0;
+          background-color: var(--bg-color);
+          border-top: 1px solid rgba(197, 160, 89, 0.05);
         }
 
         .footer-content {
-          display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr;
-          gap: 2.5rem;
-          margin-bottom: 2.5rem;
-        }
-
-        .footer-brand {
-          margin-bottom: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
         }
 
         .footer-logo {
-          font-size: clamp(1.5rem, 4vw, 2.2rem);
-          font-weight: 800;
-          color: #FFFFFF;
-          margin-bottom: 1rem;
-          display: inline-block;
-          position: relative;
-          text-transform: uppercase;
-          letter-spacing: 2px;
+          font-size: 2.5rem;
+          color: var(--text-primary);
+          letter-spacing: 0.2em;
         }
 
-        .footer-logo::after {
-          content: '';
-          display: block;
-          width: 50px;
-          height: 3px;
-          background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
-          margin-top: 0.5rem;
-          border-radius: 2px;
-        }
-
-        .footer-description {
-          color: #CCCCCC;
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-          max-width: 400px;
-          font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-        }
-
-        .social-links {
+        .footer-socials {
           display: flex;
-          gap: 0.75rem;
-          margin-bottom: 1.5rem;
-          flex-wrap: wrap;
+          gap: 2rem;
         }
 
-        .social-link {
-          width: 40px;
-          height: 40px;
-          background: rgba(124, 58, 237, 0.15);
-          border: 1px solid rgba(124, 58, 237, 0.3);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #A855F7;
-          transition: all 0.3s ease;
-          text-decoration: none;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-          flex-shrink: 0;
+        .footer-icon {
+          color: var(--text-secondary);
+          font-size: 1.5rem;
+          transition: var(--transition);
         }
 
-        .social-link::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, #7C3AED, #A855F7);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          border-radius: 50%;
-        }
-
-        .social-link:hover::before {
-          opacity: 0.2;
-        }
-
-        .social-link:hover {
-          background: rgba(124, 58, 237, 0.2);
-          border-color: rgba(124, 58, 237, 0.5);
-          color: #C084FC;
-          transform: translateY(-4px) scale(1.15);
-          box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
-        }
-
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: 0.6rem;
-        }
-
-        .contact-item {
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          color: #CCCCCC;
-          font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-        }
-
-        .contact-icon {
-          color: #A855F7;
-          font-size: 1rem;
-          flex-shrink: 0;
-        }
-
-        .footer-section h4 {
-          font-size: clamp(1.1rem, 3vw, 1.3rem);
-          margin-bottom: 1.25rem;
-          color: #FFFFFF;
-          position: relative;
-          padding-bottom: 0.5rem;
-          font-weight: 700;
-        }
-
-        .footer-section h4::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 2px;
-          background: linear-gradient(90deg, #7C3AED, #A855F7, #EC4899);
-          border-radius: 2px;
-        }
-
-        .footer-links {
-          list-style: none;
-        }
-
-        .footer-link-item {
-          margin-bottom: 0.6rem;
-        }
-
-        .footer-link {
-          color: #CCCCCC;
-          cursor: pointer;
-          transition: color 0.3s ease;
-          background: none;
-          border: none;
-          font-size: clamp(0.9rem, 2.5vw, 1rem);
-          text-align: left;
-          padding: 0;
-          white-space: nowrap;
-        }
-
-        .footer-link:hover {
-          color: #A855F7;
-        }
-
-        .newsletter-form {
-          margin-top: 0.75rem;
-        }
-
-        .newsletter-input {
-          width: 100%;
-          padding: 0.85rem 1rem;
-          background: rgba(40, 40, 40, 0.8);
-          border: 1px solid rgba(124, 58, 237, 0.3);
-          border-radius: 12px;
-          color: #FFFFFF;
-          margin-bottom: 0.75rem;
-          font-size: clamp(0.9rem, 2.5vw, 1rem);
-          transition: all 0.3s ease;
-        }
-
-        .newsletter-input:focus {
-          outline: none;
-          border-color: #A855F7;
-          box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
-        }
-
-        .newsletter-input::placeholder {
-          color: #AAAAAA;
-        }
-
-        .newsletter-btn {
-          width: 100%;
-          padding: 0.85rem;
-          background: linear-gradient(135deg, #7C3AED, #A855F7);
-          color: #FFFFFF;
-          border: none;
-          border-radius: 12px;
-          font-size: clamp(0.9rem, 2.5vw, 1rem);
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .newsletter-btn:hover {
-          background: linear-gradient(135deg, #A855F7, #C084FC);
+        .footer-icon:hover {
+          color: var(--primary-color);
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
-        }
-
-        .stats-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.75rem;
-          margin-top: 1.25rem;
-        }
-
-        .stat-item {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: #CCCCCC;
-          font-size: clamp(0.8rem, 2.5vw, 0.9rem);
-        }
-
-        .stat-icon {
-          color: #A855F7;
-          font-size: 1rem;
-          flex-shrink: 0;
-        }
-
-        .footer-bottom {
-          padding-top: 2rem;
-          border-top: 1px solid rgba(124, 58, 237, 0.15);
-          text-align: center;
-          color: #CCCCCC;
-          font-size: clamp(0.85rem, 2.5vw, 1rem);
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 1rem;
         }
 
         .copyright {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .heart {
-          color: #A855F7;
-        }
-
-        .footer-bottom-links {
-          display: flex;
-          gap: 1.5rem;
-          flex-wrap: wrap;
-          justify-content: flex-end;
-        }
-
-        .footer-bottom-link {
-          color: #CCCCCC;
-          text-decoration: none;
-          font-size: clamp(0.85rem, 2.5vw, 1rem);
-          transition: color 0.3s ease;
-          white-space: nowrap;
-        }
-
-        .footer-bottom-link:hover {
-          color: #A855F7;
-        }
-
-        /* Tablet Responsive */
-        @media (max-width: 1024px) {
-          .footer-content {
-            grid-template-columns: 1fr 1fr;
-          }
-
-          .footer {
-            padding: 3.5rem 0 1.5rem;
-          }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          .footer-content {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-          }
-
-          .footer {
-            padding: 3rem 0 1.5rem;
-          }
-
-          .footer-bottom {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-          }
-
-          .footer-bottom-links {
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-          }
-
-          .social-links {
-            justify-content: flex-start;
-          }
-        }
-
-        /* Small Mobile */
-        @media (max-width: 480px) {
-          .footer {
-            padding: 2.5rem 0 1rem;
-          }
-
-          .footer-content {
-            gap: 1.75rem;
-          }
-
-          .footer-description {
-            font-size: 0.9rem;
-          }
-
-          .social-link {
-            width: 38px;
-            height: 38px;
-          }
-
-          .footer-section h4 {
-            font-size: 1.1rem;
-          }
-
-          .footer-link {
-            font-size: 0.9rem;
-          }
-
-          .newsletter-input,
-          .newsletter-btn {
-            padding: 0.75rem;
-            font-size: 0.9rem;
-          }
-
-          .stats-grid {
-            gap: 0.5rem;
-          }
-
-          .stat-item {
-            font-size: 0.8rem;
-          }
-
-          .footer-bottom-links {
-            gap: 0.75rem;
-          }
-
-          .footer-bottom-link {
-            font-size: 0.85rem;
-          }
+          font-family: 'Bebas Neue', cursive;
+          letter-spacing: 0.1em;
+          font-size: 0.9rem;
+          color: var(--text-dim);
         }
       `}</style>
+    </footer>
+  );
+};
+
+export default Footer;
 
       <footer className="footer">
         <div className="container">
